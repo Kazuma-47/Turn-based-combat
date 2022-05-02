@@ -1,11 +1,13 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 
 public class TeamManager : MonoBehaviour
 {
     [SerializeField] private int teamSize;
     [SerializeField] private GameObject[] currentTeam;
+    [SerializeField] private UnityEvent<GameObject[]> Team = new UnityEvent<GameObject[]>();
 
     private void Awake()
     {
@@ -18,6 +20,7 @@ public class TeamManager : MonoBehaviour
         {
             if (currentTeam[i] != null || Array.Exists(currentTeam, x=> x == member)) continue;
             currentTeam[i] = member;
+            Team.Invoke(currentTeam);
             break;
         }
     }
@@ -25,6 +28,7 @@ public class TeamManager : MonoBehaviour
     public void RemoveMember(int index)
     {
         currentTeam[index] = null;
+        Team.Invoke(currentTeam);
     }
 
     public void ResizeArray()
