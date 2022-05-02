@@ -27,6 +27,7 @@ public class TeamManager : MonoBehaviour
 
     public void RemoveMember(int index)
     {
+        print("active");
         currentTeam[index] = null;
         Team.Invoke(currentTeam);
     }
