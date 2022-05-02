@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class TeamManager : MonoBehaviour
 {
-    [SerializeField] private int teamSize;
+    [SerializeField] private int teamSize =5 ;
     [SerializeField] private GameObject[] currentTeam;
     [SerializeField] private UnityEvent<GameObject[]> Team = new UnityEvent<GameObject[]>();
 
