@@ -389,6 +389,9 @@ MonoBehaviour:
   bia: {fileID: 0}
   Menu: {fileID: 596383923}
   Attacks: {fileID: 516909785}
+  EventOnBlast:
+    m_PersistentCalls:
+      m_Calls: []
   kEVINArrow: {fileID: 0}
   RosalinaArrow: {fileID: 0}
   KitNArrow: {fileID: 0}
@@ -613,7 +616,7 @@ GameObject:
   - component: {fileID: 183595787}
   - component: {fileID: 183595788}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Character Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -810,7 +813,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1335719231}
         m_TargetAssemblyTypeName: TeamManager, Assembly-CSharp
-        m_MethodName: AddMember
+        m_MethodName: CheckSlots
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 3055193170824944558, guid: db86aa51f27b53c46bd874b39fd76a58, type: 3}
@@ -1092,7 +1095,7 @@ GameObject:
   - component: {fileID: 234599097}
   - component: {fileID: 234599098}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Character Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3191,7 +3194,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1335719231}
         m_TargetAssemblyTypeName: TeamManager, Assembly-CSharp
-        m_MethodName: AddMember
+        m_MethodName: CheckSlots
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 3107623560469688514, guid: a19c6857ced03594c976351110c078a4, type: 3}
@@ -4322,7 +4325,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1335719231}
         m_TargetAssemblyTypeName: TeamManager, Assembly-CSharp
-        m_MethodName: AddMember
+        m_MethodName: CheckSlots
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 3393546451754557487, guid: bddf68770e1c7aa42893eb0fd2854eda, type: 3}
@@ -4412,7 +4415,7 @@ GameObject:
   - component: {fileID: 1059218350}
   - component: {fileID: 1059218351}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Character Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4573,7 +4576,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1335719231}
         m_TargetAssemblyTypeName: TeamManager, Assembly-CSharp
-        m_MethodName: AddMember
+        m_MethodName: CheckSlots
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1355374418646378738, guid: 497ef8433ffe147439746e4e2636242e, type: 3}
@@ -4765,7 +4768,7 @@ GameObject:
   - component: {fileID: 1260450659}
   - component: {fileID: 1260450660}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Character Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5534,7 +5537,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1335719231}
         m_TargetAssemblyTypeName: TeamManager, Assembly-CSharp
-        m_MethodName: AddMember
+        m_MethodName: CheckSlots
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 7418605343251238670, guid: bfbfcccb302e1344e9d4d4224a94bbfa, type: 3}
@@ -6723,7 +6726,7 @@ GameObject:
   - component: {fileID: 1826568556}
   - component: {fileID: 1826568557}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: character Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7122,7 +7125,7 @@ GameObject:
   - component: {fileID: 1941116872}
   - component: {fileID: 1941116873}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Character Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

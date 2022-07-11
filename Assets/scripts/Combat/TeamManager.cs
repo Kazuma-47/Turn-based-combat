@@ -42,12 +42,13 @@ public class TeamManager : MonoBehaviour
 
     public void ClearTeam()
     {
-        
+        print("cleared");
+        currentTeam.ClearArray();
+        Team.Invoke(currentTeam);
     }
     
     public void RemoveMember(int index)
     {
-        print("active");
         currentTeam[index] = null;
         Team.Invoke(currentTeam);
     }
