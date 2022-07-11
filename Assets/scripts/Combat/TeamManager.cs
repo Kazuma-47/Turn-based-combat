@@ -14,17 +14,37 @@ public class TeamManager : MonoBehaviour
         currentTeam = new GameObject[teamSize];
     }
 
-    public void AddMember(GameObject member)
+
+    public void CheckSlots(GameObject member)
     {
         for (int i = 0; i < currentTeam.Length; i++)
         {
-            if (currentTeam[i] != null || Array.Exists(currentTeam, x=> x == member)) continue;
-            currentTeam[i] = member;
-            Team.Invoke(currentTeam);
-            break;
+            //Check if the character has already been added to the array
+            if (Array.Exists(currentTeam, x => x == member))
+            {
+                int index = currentTeam.findIndex(member);
+                RemoveMember(index);    print("found in array");   
+                break; 
+            }
+            //if character slot is used and character is not already in the array check the next
+            if (currentTeam[i] != null) continue;   
+                AddMember(i,member);
+                break;
+            
         }
+
+    }
+    public void AddMember(int index ,GameObject member)
+    {
+            currentTeam[index] = member;
+            Team.Invoke(currentTeam);
     }
 
+    public void ClearTeam()
+    {
+        
+    }
+    
     public void RemoveMember(int index)
     {
         print("active");

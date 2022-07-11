@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Events;
 
 
 public class TurnManager : MonoBehaviour
@@ -11,6 +12,8 @@ public class TurnManager : MonoBehaviour
     [HideInInspector] public GameObject bia;
     [HideInInspector] public GameObject Menu;
     [HideInInspector] public GameObject Attacks;
+
+    [SerializeField] private UnityEvent<string> EventOnBlast = new UnityEvent<string>();
 
     [HideInInspector] public GameObject kEVINArrow;
     [HideInInspector] public GameObject RosalinaArrow;
