@@ -42,8 +42,7 @@ public class TeamManager : MonoBehaviour
 
     public void ClearTeam()
     {
-        print("cleared");
-        currentTeam.ClearArray();
+        Array.Clear(currentTeam, 0, currentTeam.Length);
         Team.Invoke(currentTeam);
     }
     

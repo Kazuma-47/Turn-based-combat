@@ -8,9 +8,5 @@ public static class Extentions
     public static int findIndex<T>(this T[] array, T item) {
     return Array.IndexOf(array, item);
     }
-
-    public static void ClearArray(this Array array)
-    {
-        
-    }
+    
 }
