@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - ally
+  - Ground
   layers:
   - Default
   - TransparentFX
