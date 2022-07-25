@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.UIElements;
 
 public class GritManager : MonoBehaviour
@@ -10,8 +11,7 @@ public class GritManager : MonoBehaviour
     [SerializeField] private Vector3 expantionRadius;
     [SerializeField] private Tile prefab;
     private BoxCollider _collider;
-    public Vector3 bounds2;
-    
+
     private void Start()
     {
         //GenerateGrit();
@@ -48,30 +48,55 @@ public class GritManager : MonoBehaviour
         Collider[] Objects = Physics.OverlapBox(gameObject.transform.position, expantionRadius, quaternion.identity);
         foreach (var ground in Objects)
         {
-            var surface = ground.GetComponent<Renderer>().bounds.extents *2;
-            var placement = ground.GetComponent<Renderer>().bounds.center;
-            print(surface);
-            GenerateGrit(surface.x,1, surface.z , placement);
+            var surfaceSize = ground.GetComponent<Renderer>().bounds.size;
+            var prefabSize = prefab.GetComponent<Renderer>().bounds.size;
+            
+            print(prefab.GetComponent<Renderer>().bounds.size);
+            FillObject(ground);
+            
             
 
         }
     }
 
+    void FillObject(Collider objectToFill)
+    {
+        var prefabWidth = prefab.GetComponent<Renderer>().bounds.size.x;
+        float prefabDepth = prefab.GetComponent<Renderer>().bounds.size.z ;
+        float fillWidth = objectToFill.GetComponent<Renderer>().bounds.size.x;
+        float fillDepth = objectToFill.GetComponent<Renderer>().bounds.size.z;
+    
+        var halfOfPrefab = prefab.GetComponent<Renderer>().bounds.size / 2;
+        
+        float horizontalAmount = fillWidth / prefabDepth;
+        float verticalAmount = fillDepth / prefabDepth;
+
+        for (int i = 0; i < horizontalAmount; i++)
+        {
+            for (int j = 0; j < verticalAmount; j++)
+            {
+                Tile obj = Instantiate(prefab, objectToFill.GetComponent<Renderer>().bounds.min+ halfOfPrefab + new Vector3(i * prefabWidth, 1, j * prefabDepth), Quaternion.identity ,gameObject.transform);
+                obj.name = $"Tile {i} : {j}";
+            }
+        }
+
+    }
     //make a variable with  [SerializeField] private int width,height,depth;
     //if you want to generate a flat terain as grit
-    public void GenerateGrit(float width,float height,float depth , Vector3 bounds)
+    /*public void GenerateGrit(float width,float height,float depth)
     {
         for(int x = 0; x < width; x++){
             for (int y = 0; y < height; y++){
                 for (int z = 0; z < depth; z++)
                 {
-                    var spawnedTile = Instantiate(prefab, new Vector3(x,y,z), Quaternion.identity ,gameObject.transform);
+                    var spawnedTile = Instantiate(prefab, new Vector3(x, y, z), Quaternion.identity);
+                    //var spawnedTile = Instantiate(prefab, new Vector3(x,y,z), Quaternion.identity ,gameObject.transform);
                     spawnedTile.name = $"Tile {x} {y}";
                 }
               
             }
         }
-    }
+    }*/
 
    public void DeleteGrit()
     {
