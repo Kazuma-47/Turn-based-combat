@@ -8,11 +8,15 @@ public class CustomInspector : Editor
     {
         DrawDefaultInspector();
         GritManager gm = (GritManager) target;
-        if (GUILayout.Button("Generate Grit"))
+        if (GUILayout.Button("Generate Responsive Grit"))   //calculate the surface size to fill it with tiles must have a int as size.
         {
             gm.GenerateResponsiveGrit();
         }
-        if (GUILayout.Button("Delete Grit"))
+        if (GUILayout.Button("Generate Island Grit"))   //will cover a surface with one tile.
+        {
+            gm.GenerateIslandGrit();
+        }
+        if (GUILayout.Button("Delete Grit"))        //clear all spawned tiles
         {
             gm.DeleteGrit();
         }

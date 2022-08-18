@@ -1,43 +1,32 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
+using Object = System.Object;
 
 public class GritManager : MonoBehaviour
 {
     [SerializeField] private Vector3 expantionRadius;
     [SerializeField] private Tile prefab;
-    private BoxCollider _collider;
+    [SerializeField] private Tile nonSelectableTileprefab;
 
-    private void Start()
-    {
-        //GenerateGrit();
-    }
-
-
-    public void OnTriggerEnter(Collider other)
-    {
-        print("TO BAD");
-        if(other.CompareTag("Ground"))
-        {
-            print("I EXIST");
-            var position = other.transform.gameObject.transform.position;
-            Instantiate(prefab,new Vector3(position.x,position.y+2,position.z), Quaternion.identity ,gameObject.transform);
-        }
-    }
+    
     //will respond to objects as a grit can be used for a island type level/large scale map etc
     //if map is one object needs to fill it with multiple instances?
     //otherwise this works
     public void GenerateIslandGrit()
     {
-        Collider[] Objects=  Physics.OverlapBox(gameObject.transform.position, expantionRadius, quaternion.identity);
-        foreach (var surface in  Objects)
+        Collider[] objects=  Physics.OverlapBox(gameObject.transform.position, expantionRadius, quaternion.identity);
+        foreach (var surface in  objects)
         {
             Vector3 position = surface.transform.gameObject.transform.position;
-            var spawnedTile = Instantiate(prefab, new Vector3(position.x,position.y +0.5f , position.z) , Quaternion.identity ,gameObject.transform);
+            var spawnHeight = surface.GetComponent<Renderer>().bounds.extents.y + surface.transform.position.y ;
+            
+            var spawnedTile = Instantiate(prefab, new Vector3(position.x,spawnHeight , position.z) , Quaternion.identity ,gameObject.transform);
             spawnedTile.transform.localScale = new Vector3(surface.transform.localScale.x, spawnedTile.transform.localScale.y,surface.transform.localScale.z);
             spawnedTile.name = $"Tile";
         }
@@ -45,41 +34,54 @@ public class GritManager : MonoBehaviour
 
     public void GenerateResponsiveGrit()
     {
-        Collider[] Objects = Physics.OverlapBox(gameObject.transform.position, expantionRadius, quaternion.identity);
-        foreach (var ground in Objects)
+        Collider[] objects = Physics.OverlapBox(gameObject.transform.position, expantionRadius, quaternion.identity);
+        foreach (var ground in objects)
         {
-            var surfaceSize = ground.GetComponent<Renderer>().bounds.size;
-            var prefabSize = prefab.GetComponent<Renderer>().bounds.size;
-            
-            print(prefab.GetComponent<Renderer>().bounds.size);
-            FillObject(ground);
-            
-            
-
+            if (ground.CompareTag("Ground"))
+            {
+                FillObject(ground, prefab);
+            }
+            else if (ground.CompareTag("NonSelectable"))
+            {
+                FillObject(ground, nonSelectableTileprefab);
+            }
         }
     }
 
-    void FillObject(Collider objectToFill)
+    void FillObject(Collider objectToFill , Tile filler)
     {
         var prefabWidth = prefab.GetComponent<Renderer>().bounds.size.x;
         float prefabDepth = prefab.GetComponent<Renderer>().bounds.size.z ;
+        float prefabHeight = objectToFill.GetComponent<Renderer>().bounds.size.y;
         float fillWidth = objectToFill.GetComponent<Renderer>().bounds.size.x;
         float fillDepth = objectToFill.GetComponent<Renderer>().bounds.size.z;
-    
+        float fillHeight = objectToFill.GetComponent<Renderer>().bounds.size.y;
+        var spawnHeight = objectToFill.GetComponent<Renderer>().bounds.extents.y + fillHeight /2;
+
+
         var halfOfPrefab = prefab.GetComponent<Renderer>().bounds.size / 2;
         
         float horizontalAmount = fillWidth / prefabDepth;
         float verticalAmount = fillDepth / prefabDepth;
-
+        
         for (int i = 0; i < horizontalAmount; i++)
         {
             for (int j = 0; j < verticalAmount; j++)
             {
-                Tile obj = Instantiate(prefab, objectToFill.GetComponent<Renderer>().bounds.min+ halfOfPrefab + new Vector3(i * prefabWidth, 1, j * prefabDepth), Quaternion.identity ,gameObject.transform);
-                obj.name = $"Tile {i} : {j}";
+                Tile obj = Instantiate(filler, objectToFill.GetComponent<Renderer>().bounds.min+ halfOfPrefab +  new Vector3(i * prefabWidth ,  spawnHeight , j * prefabDepth ), objectToFill.transform.rotation ,gameObject.transform);
+                    obj.name = $"Tile {i} : {j}";
+                
             }
         }
 
+    }
+
+    void calculatePositions(Collider Object)
+    {
+        Renderer objectRenderer = Object.GetComponent<Renderer>();
+        Vector3 objectPos = objectRenderer.bounds.center;
+        Tile obj = Instantiate(prefab,objectPos,Quaternion.identity ,gameObject.transform);
+        print(objectPos);
     }
     //make a variable with  [SerializeField] private int width,height,depth;
     //if you want to generate a flat terain as grit
