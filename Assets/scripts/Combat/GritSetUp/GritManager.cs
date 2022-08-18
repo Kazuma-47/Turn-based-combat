@@ -73,34 +73,9 @@ public class GritManager : MonoBehaviour
                 
             }
         }
-
     }
 
-    void calculatePositions(Collider Object)
-    {
-        Renderer objectRenderer = Object.GetComponent<Renderer>();
-        Vector3 objectPos = objectRenderer.bounds.center;
-        Tile obj = Instantiate(prefab,objectPos,Quaternion.identity ,gameObject.transform);
-        print(objectPos);
-    }
-    //make a variable with  [SerializeField] private int width,height,depth;
-    //if you want to generate a flat terain as grit
-    /*public void GenerateGrit(float width,float height,float depth)
-    {
-        for(int x = 0; x < width; x++){
-            for (int y = 0; y < height; y++){
-                for (int z = 0; z < depth; z++)
-                {
-                    var spawnedTile = Instantiate(prefab, new Vector3(x, y, z), Quaternion.identity);
-                    //var spawnedTile = Instantiate(prefab, new Vector3(x,y,z), Quaternion.identity ,gameObject.transform);
-                    spawnedTile.name = $"Tile {x} {y}";
-                }
-              
-            }
-        }
-    }*/
-
-   public void DeleteGrit()
+    public void DeleteGrit()
     {
         foreach (Transform child in transform) {
             DestroyImmediate(child.gameObject);
@@ -110,7 +85,5 @@ public class GritManager : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(transform.position, expantionRadius);
-        //Gizmos.DrawWireCube(transform.position, bounds2 *2);
-
     }
 }
