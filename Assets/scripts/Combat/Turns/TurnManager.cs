@@ -12,33 +12,36 @@ using TMPro;
 
 public class TurnManager : MonoBehaviour
 {
-    public int P1_HP;
-    [HideInInspector] public GameObject postcombat;
-    [HideInInspector] public GameObject combat;
-    public TextMeshProUGUI UI_CurrentHealth;
-    
- 
 
+
+    private float HpScale = 1.025f;
+    public int health;
+    public int IntHP;
+    float FloatHP;
+
+    public void Start()
+    {
+        GetHealth();
+        print(health);
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown("space"))
+        {
+            health = health - 5;
+            BattleEnd();
+        }
+
+    }
     public void GetHealth()
     {
-        P1_HP = HealthbarManager.HP;
+        health = CharacterStats.HP;
+        FloatHP = Mathf.Pow(HpScale, CharacterStats.monsterLVL) * CharacterStats.monsterHP;
+        IntHP = (int)Math.Round(FloatHP);
     }
-
-    public void StartCombat()
-    {
-        postcombat.SetActive(false);
-        combat.SetActive(true);
-        GetHealth();
-    }
-
-    public void UpdateUI()
-    {
-        UI_CurrentHealth.text = P1_HP.ToString();
-        
-    }
-
     public void BattleEnd()
     {
-        HealthbarManager.HP = P1_HP;
+        CharacterStats.HP = health;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

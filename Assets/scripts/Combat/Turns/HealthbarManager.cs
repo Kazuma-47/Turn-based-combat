@@ -5,7 +5,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class HealthbarManager : MonoBehaviour
 {
-    public static int HP;
 
+    public void StoreHealth()
+    {
 
+    }
 }
