@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Moves : MonoBehaviour
 {
-    public int use(int MoveID , int TargetHP, int MaxHP)
+    public int use(int MoveID , int TargetHP, float MaxHP)
     {
         if (MoveID == 1) return Tackle(TargetHP);
         else if (MoveID == 2) return Heal(TargetHP, MaxHP);
@@ -18,10 +18,9 @@ public class Moves : MonoBehaviour
 
     }
 
-    public int Heal(int currentHealth , int maxHealth)
+    public int Heal(int currentHealth , float maxHealth)
     {
-       int amount = maxHealth / 100 * 20;   //voor een reden geeft amount 0 terug hij krijgt wel maxhealth goed mee _____formule fout??
-       print(amount);
-       return currentHealth;
+       int amount = (int)Mathf.Round(maxHealth / 100f * 20f);
+       return currentHealth + amount;
     }
 }

@@ -17,7 +17,7 @@ public class TurnManager : MonoBehaviour
     private float HpScale = 1.025f;
     public int health;
     public int IntHP;
-    float FloatHP;
+    public float FloatHP;
 
     public void Start()
     {
