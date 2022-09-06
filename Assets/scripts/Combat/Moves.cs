@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Moves : MonoBehaviour
 {
-    public int use(int MoveID , int TargetHP, float MaxHP)
+    public int use( int moveID, CharacterStats stats)
     {
-        if (MoveID == 1) return Tackle(TargetHP);
-        else if (MoveID == 2) return Heal(TargetHP, MaxHP);
-        else return TargetHP;
+        if (moveID == 1) return Tackle(stats.currentHP);
+        else if (moveID == 2) return Heal(stats.currentHP, stats.MaxHP);
+        else return stats.currentHP;
     }
     public int Tackle(int TargetHP)
     {

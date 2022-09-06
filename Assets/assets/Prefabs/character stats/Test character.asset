@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4ad3b5cfd0910742ab5b07c4f57057a, type: 3}
   m_Name: Test character
   m_EditorClassIdentifier: 
-  Name: Test Stats
-  maxHP: 100
-  lvl: 0
-  MoveIds: 0100000002000000
+  name: Test character
+  baseHp: 100
+  MoveIds: 01000000020000000000000000000000

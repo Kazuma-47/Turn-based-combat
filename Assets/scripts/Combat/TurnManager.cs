@@ -12,7 +12,11 @@ using TMPro;
 
 public class TurnManager : MonoBehaviour
 {
-
+    private enum State
+    {
+        PlayerTurn, 
+        EnemyTurn
+    }
 
     public float HpScale = 1.025f;
     public int health;
@@ -35,13 +39,13 @@ public class TurnManager : MonoBehaviour
     }
     public void GetHealth()
     {
-        health = CharacterStats.HP;
+        health = CharacterStats.currentHP;
         FloatHP = Mathf.Pow(HpScale, CharacterStats.monsterLVL) * CharacterStats.monsterHP;
         IntHP = (int)Math.Round(FloatHP);
     }
     public void BattleEnd()
     {
-        CharacterStats.HP = health;
+        CharacterStats.currentHP = health;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

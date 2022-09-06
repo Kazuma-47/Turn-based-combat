@@ -1,40 +1,47 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.Sockets;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
 
 public class AttackInput : MonoBehaviour
 {
-    public Slider slider;
-    public TurnManager TurnManager;
     public Moves moves;
-    public int health;
-    public int IntHP;
-    public float FloatHP;
+    [SerializeField] private  bool enemy;
+    public CharacterStats Player;
+    public CharacterStats Enemy;
+    private CharacterStats targetToAttack;
 
-    private void Start()
+
+    public void Target()
     {
-        health = CharacterStats.HP;
-        FloatHP = Mathf.Pow(TurnManager.HpScale, CharacterStats.monsterLVL) * CharacterStats.monsterHP;
-        IntHP = (int)Math.Round(FloatHP);
-        slider.maxValue = 100;
-        slider.value = IntHP;
-        
+        if (enemy)
+        {
+            targetToAttack = Player;
+        }
+        else
+        {
+            targetToAttack = Enemy;
+        }
     }
-    public void useTackle()
-    {
+    
         
-        slider.value = moves.use(1, TurnManager.IntHP, slider.maxValue);
-        TurnManager.IntHP =(int)Mathf.Round(slider.value);
+    public void Attack(CharacterStats targetToAttack)
+    {
+        targetToAttack.currentHP = useTackle(targetToAttack);
+    }
+    public int useTackle(CharacterStats stats)
+    {
+        var newHP = moves.use(1, stats);
+        return newHP;
 
     }
-    public void useHeal()
+    public void useHeal(CharacterStats stats)
     {
-        
-        slider.value = moves.use(2, TurnManager.IntHP, slider.maxValue);
-        TurnManager.IntHP =(int)Mathf.Round(slider.value);
+        var newHP = moves.use(2, stats);
     }
     
 }
