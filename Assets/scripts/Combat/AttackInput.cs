@@ -16,12 +16,13 @@ public class AttackInput : MonoBehaviour
     {
         print(TurnManager.FloatHP);
         print(TurnManager.IntHP);
-        slider.value = TurnManager.IntHP;
-        slider.maxValue = TurnManager.FloatHP;
+        
     }
 
     public void useHeal()
     {
+        slider.value = TurnManager.IntHP;
+        slider.maxValue = TurnManager.FloatHP;
         slider.value = moves.use(2, TurnManager.IntHP, TurnManager.FloatHP);
         
     }
