@@ -10,20 +10,24 @@ public class AttackInput : MonoBehaviour
     public Slider slider;
     public TurnManager TurnManager;
     public Moves moves;
-
+    public int health;
+    public int IntHP;
+    public float FloatHP;
 
     private void Start()
     {
-        print(TurnManager.FloatHP);
-        print(TurnManager.IntHP);
+        health = CharacterStats.HP;
+        FloatHP = Mathf.Pow(TurnManager.HpScale, CharacterStats.monsterLVL) * CharacterStats.monsterHP;
+        IntHP = (int)Math.Round(FloatHP);
+        slider.maxValue = 100;
+        slider.value = IntHP;
         
     }
 
     public void useHeal()
     {
-        slider.value = TurnManager.IntHP;
-        slider.maxValue = TurnManager.FloatHP;
-        slider.value = moves.use(2, TurnManager.IntHP, TurnManager.FloatHP);
+        
+        slider.value = moves.use(2, TurnManager.IntHP, slider.maxValue);
         
     }
     
