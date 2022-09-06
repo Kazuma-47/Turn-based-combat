@@ -23,12 +23,18 @@ public class AttackInput : MonoBehaviour
         slider.value = IntHP;
         
     }
+    public void useTackle()
+    {
+        
+        slider.value = moves.use(1, TurnManager.IntHP, slider.maxValue);
+        TurnManager.IntHP =(int)Mathf.Round(slider.value);
 
+    }
     public void useHeal()
     {
         
         slider.value = moves.use(2, TurnManager.IntHP, slider.maxValue);
-        
+        TurnManager.IntHP =(int)Mathf.Round(slider.value);
     }
     
 }

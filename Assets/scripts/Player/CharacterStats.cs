@@ -10,6 +10,4 @@ public class CharacterStats : MonoBehaviour
     public static int monsterLVL = 30;
     public static int monsterHP = 30;
 
-
-    public Ability[] moves = new Ability[4];
 }
