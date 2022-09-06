@@ -344,6 +344,7 @@ GameObject:
   m_Component:
   - component: {fileID: 75330871}
   - component: {fileID: 75330872}
+  - component: {fileID: 75330873}
   m_Layer: 0
   m_Name: UI
   m_TagString: Untagged
@@ -384,77 +385,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1e0cfbe5363d2a45bdd8b707a0cf99a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ketsu: {fileID: 0}
-  KitN: {fileID: 0}
-  bia: {fileID: 0}
-  Menu: {fileID: 596383923}
-  Attacks: {fileID: 516909785}
-  EventOnBlast:
-    m_PersistentCalls:
-      m_Calls: []
-  kEVINArrow: {fileID: 0}
-  RosalinaArrow: {fileID: 0}
-  KitNArrow: {fileID: 0}
-  KetsuArrow: {fileID: 0}
-  BiaArrow: {fileID: 0}
-  Name: {fileID: 1569930463}
-  MaxHP: {fileID: 713265556}
-  CurrentHP: {fileID: 2049071699}
-  CurrentStamina: {fileID: 1868932172}
-  MaxStamina: {fileID: 480465305}
-  Attack1: {fileID: 1292966781}
-  Attack2: {fileID: 378287984}
-  Attack3: {fileID: 1826520818}
-  NextAttck: {fileID: 2034417853}
-  Cost: {fileID: 1542500933}
-  Stamina: {fileID: 313267530}
-  Mana: {fileID: 491420576}
-  Healthbar: {fileID: 242269436}
-  gradientHP:
-    serializedVersion: 2
-    key0: {r: 1, g: 0, b: 0, a: 1}
-    key1: {r: 1, g: 0.9490197, b: 0, a: 1}
-    key2: {r: 0.039215688, g: 1, b: 0.08235294, a: 0}
-    key3: {r: 0.039215688, g: 1, b: 0.08235294, a: 0}
-    key4: {r: 0.039215688, g: 1, b: 0.08235294, a: 0}
-    key5: {r: 0.039215688, g: 1, b: 0.08235294, a: 0}
-    key6: {r: 0, g: 0, b: 0, a: 0}
-    key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 0
-    ctime1: 33153
-    ctime2: 65535
-    ctime3: 65535
-    ctime4: 65535
-    ctime5: 65535
-    ctime6: 0
-    ctime7: 0
-    atime0: 0
-    atime1: 65535
-    atime2: 0
-    atime3: 0
-    atime4: 0
-    atime5: 0
-    atime6: 0
-    atime7: 0
-    m_Mode: 0
-    m_NumColorKeys: 3
-    m_NumAlphaKeys: 2
-  fill: {fileID: 248701336}
-  EnemyHP: {fileID: 230784384}
-  enemyHP: 0
-  Crit: 
-  hp1: 0
-  hp2: 0
-  hp3: 0
-  hp4: 0
-  hp5: 0
-  ketsuchoice: {fileID: 0}
-  KitNchoice: {fileID: 0}
-  biachoice: {fileID: 0}
-  Faniochoice: {fileID: 0}
-  Cherentellchoice: {fileID: 0}
-  timer: 0
-  canSelect: 0
+  moves: {fileID: 516909787}
+  P1_HP: 0
+  UI_CurrentHealth: {fileID: 2049071699}
+  enemyHealth: {fileID: 230784384}
+  playerHealth: {fileID: 242269436}
+  enemyhp: 20
+--- !u!114 &75330873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75330870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 607fd441d7c18904f8ef27b2e1562052, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AtkMenu: {fileID: 516909785}
+  MainMenu: {fileID: 596383923}
 --- !u!1 &103489426
 GameObject:
   m_ObjectHideFlags: 0
@@ -930,9 +880,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 100
+  m_MaxValue: 20
   m_WholeNumbers: 1
-  m_Value: 100
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1021,12 +971,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 75330872}
         m_TargetAssemblyTypeName: TurnManager, Assembly-CSharp
-        m_MethodName: attackbutton1
-        m_Mode: 1
+        m_MethodName: Attack
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1155,7 +1105,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 0
+  m_MaxValue: 20
   m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
@@ -1194,7 +1144,7 @@ RectTransform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: -1.7999878, y: -0.5356102}
   m_SizeDelta: {x: 10.27, y: -38.051}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1211,7 +1161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.04460168, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1562,7 +1512,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Attack
+  m_text: 'Heal
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 37d9e1d884dc1ee47bcc797fe56cc383, type: 2}
   m_sharedMaterial: {fileID: 9193266417391434639, guid: 37d9e1d884dc1ee47bcc797fe56cc383, type: 2}
@@ -1757,7 +1709,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &411662453
 Transform:
   m_ObjectHideFlags: 0
@@ -1836,12 +1788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 118fd27f47f7eae4c98929aeba540762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  createplayer: {fileID: 0}
-  moves:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  createplayer: {fileID: 11400000, guid: 92bfb3c17eb36fb4e95ce0bf226e992a, type: 2}
 --- !u!114 &411662456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2381,6 +2328,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 516909786}
+  - component: {fileID: 516909787}
   m_Layer: 0
   m_Name: Attacks
   m_TagString: Untagged
@@ -2412,6 +2360,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &516909787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516909785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1bc8ccb9b729224d892f6032d387ab3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -3588,7 +3548,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &787606467
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3626,7 +3586,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &807188963
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4841,7 +4801,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Attack
+  m_text: Tackle
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 37d9e1d884dc1ee47bcc797fe56cc383, type: 2}
   m_sharedMaterial: {fileID: 9193266417391434639, guid: 37d9e1d884dc1ee47bcc797fe56cc383, type: 2}
@@ -5103,7 +5063,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1350427995}
-  - component: {fileID: 1350427997}
   - component: {fileID: 1350427996}
   m_Layer: 0
   m_Name: atack 2
@@ -5153,20 +5112,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 389.94196, y: 66.08196}
   m_EdgeRadius: 0
---- !u!114 &1350427997
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1350427994}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61facf12d6791944d8181d9e12f9d6bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TM: {fileID: 75330872}
-  Cost: {fileID: 1542500933}
 --- !u!1 &1362794092
 GameObject:
   m_ObjectHideFlags: 0
@@ -5422,7 +5367,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5630,7 +5575,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -6010,9 +5955,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 75330872}
-        m_TargetAssemblyTypeName: TurnManager, Assembly-CSharp
-        m_MethodName: attackMenu
+      - m_Target: {fileID: 75330873}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: ChangeUIAtk
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6514,12 +6459,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 75330872}
         m_TargetAssemblyTypeName: TurnManager, Assembly-CSharp
-        m_MethodName: attackbutton2
-        m_Mode: 1
+        m_MethodName: Attack
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -6900,7 +6845,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1870349248}
-  - component: {fileID: 1870349250}
   - component: {fileID: 1870349249}
   m_Layer: 0
   m_Name: atack 3
@@ -6908,7 +6852,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1870349248
 Transform:
   m_ObjectHideFlags: 0
@@ -6950,20 +6894,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 389.94196, y: 66.08196}
   m_EdgeRadius: 0
---- !u!114 &1870349250
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1870349247}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61facf12d6791944d8181d9e12f9d6bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TM: {fileID: 75330872}
-  Cost: {fileID: 1542500933}
 --- !u!1 &1900300469
 GameObject:
   m_ObjectHideFlags: 0
@@ -7135,7 +7065,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2034120375}
-  - component: {fileID: 2034120376}
   - component: {fileID: 2034120377}
   m_Layer: 0
   m_Name: atack 1
@@ -7159,20 +7088,6 @@ Transform:
   m_Father: {fileID: 516909786}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2034120376
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2034120374}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61facf12d6791944d8181d9e12f9d6bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TM: {fileID: 75330872}
-  Cost: {fileID: 1542500933}
 --- !u!61 &2034120377
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -11,6 +11,6 @@ public class CreatePlayer : ScriptableObject
     public int maxstamina;
     public int maxmana;
 
-    public Moves[] moves = new Moves[4];
+    //public Moves[] moves = new Moves[4];
 
 }

@@ -9,9 +9,7 @@ public class CharacterStats : MonoBehaviour
     private int _baseHP;
     private int _maxstamina;
     private int _maxmana;
-
-
-    public Ability[] moves = new Ability[4];
+    
     private void Start()
     {
         _name = createplayer.Name;
