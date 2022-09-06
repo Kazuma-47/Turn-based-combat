@@ -8,9 +8,8 @@ public class CreatePlayer : ScriptableObject
 {
     public string Name;
     public int maxHP;
-    public int maxstamina;
-    public int maxmana;
+    public int lvl;
 
-    //public Moves[] moves = new Moves[4];
+    public int[] MoveIds = new int[4];
 
 }

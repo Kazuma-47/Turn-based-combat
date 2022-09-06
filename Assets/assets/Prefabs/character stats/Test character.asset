@@ -10,14 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c4ad3b5cfd0910742ab5b07c4f57057a, type: 3}
-  m_Name: Ketsu
+  m_Name: Test character
   m_EditorClassIdentifier: 
-  Name: Ketsu
+  Name: Test Stats
   maxHP: 100
-  maxstamina: 0
-  maxmana: 100
-  moves:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  lvl: 0
+  MoveIds: 0100000002000000
