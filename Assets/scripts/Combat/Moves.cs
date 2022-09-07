@@ -6,10 +6,13 @@ public class Moves : MonoBehaviour
 {
     public int use( int moveID, CharacterStats stats)
     {
-        if (moveID == 1) return Tackle(stats.currentHP);
-        else if (moveID == 2) return Heal(stats.currentHP, stats.MaxHP);
+        if (moveID == 1) {return Tackle(stats.currentHP);}
+        if (moveID == 2){ return Heal(stats.currentHP, stats.MaxHP);}
         else return stats.currentHP;
     }
+
+    
+
     public int Tackle(int TargetHP)
     {
         int dmg = 10;

@@ -23,7 +23,8 @@ public class CharacterStats : MonoBehaviour
         baseHP = createPlayer.baseHp;
         moves = createPlayer.MoveIds;
         MaxHP =Mathf.Pow(createPlayer.HpScale, LVL) * baseHP;
-        MaxHP = Mathf.Round(MaxHP);
+        int maxHp =(int)Mathf.Round(MaxHP);
+        currentHP = maxHp;
     }
 
     public void GetHP(int lastHp)

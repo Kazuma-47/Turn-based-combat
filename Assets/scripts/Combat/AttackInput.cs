@@ -13,35 +13,51 @@ public class AttackInput : MonoBehaviour
     [SerializeField] private  bool enemy;
     public CharacterStats Player;
     public CharacterStats Enemy;
-    private CharacterStats targetToAttack;
+    private CharacterStats _targetToAttack;
 
+    private void Start()
+    {
+        Target();
+    }
 
     public void Target()
     {
         if (enemy)
         {
-            targetToAttack = Player;
+            _targetToAttack = Player;
         }
         else
         {
-            targetToAttack = Enemy;
+            _targetToAttack = Enemy;
         }
     }
-    
-        
-    public void Attack(CharacterStats targetToAttack)
+
+
+    public void Attack()
     {
-        targetToAttack.currentHP = useTackle(targetToAttack);
+        _targetToAttack.currentHP = useTackle(_targetToAttack);
     }
+
+    public void Heal()
+    {
+        {
+            if(enemy == false)
+                Player.currentHP = useHeal(Player);
+            else if (enemy) 
+                Enemy.currentHP = useHeal(Enemy);
+        }
+    }
+
     public int useTackle(CharacterStats stats)
     {
-        var newHP = moves.use(1, stats);
+        var newHP = moves.Tackle(stats.currentHP);
         return newHP;
 
     }
-    public void useHeal(CharacterStats stats)
+    public int useHeal(CharacterStats stats)
     {
-        var newHP = moves.use(2, stats);
+        var newHP = moves.Heal(stats.currentHP, stats.MaxHP);
+        return newHP;
     }
     
 }

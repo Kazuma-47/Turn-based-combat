@@ -12,4 +12,9 @@ public class UIManager : MonoBehaviour
       AtkMenu.SetActive(true);
       MainMenu.SetActive(false);
    }
+
+   public void updateUI()
+   {
+        
+   }
 }
