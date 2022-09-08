@@ -13,7 +13,7 @@ public class EnemyAI : AttackInput
     {
         int Ai = Random.Range(0, 6);
 
-        if (Ai >= 2)
+        if (Ai >= 1)
         {
             useTackle(Enemy);
         }
