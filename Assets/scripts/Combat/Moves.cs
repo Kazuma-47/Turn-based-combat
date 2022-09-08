@@ -11,8 +11,6 @@ public class Moves : MonoBehaviour
         else return stats.currentHP;
     }
 
-    
-
     public int Tackle(int TargetHP)
     {
         int dmg = 10;
@@ -24,6 +22,6 @@ public class Moves : MonoBehaviour
     public int Heal(int currentHealth , float maxHealth)
     {
        int amount = (int)Mathf.Round(maxHealth / 100f * 20f);
-       return currentHealth + amount;
+        return currentHealth + amount;
     }
 }

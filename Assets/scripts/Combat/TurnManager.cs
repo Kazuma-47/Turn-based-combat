@@ -29,6 +29,7 @@ public class TurnManager : MonoBehaviour
 
     private void Update()
     {
+
         if (_state == State.PlayerTurn)
         {
             ui.ChangeUIAtk();

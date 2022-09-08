@@ -209,8 +209,8 @@ GameObject:
   - component: {fileID: 258912985}
   - component: {fileID: 258912984}
   - component: {fileID: 258912986}
-  - component: {fileID: 258912987}
   - component: {fileID: 258912988}
+  - component: {fileID: 258912987}
   m_Layer: 5
   m_Name: Player
   m_TagString: Untagged
@@ -318,13 +318,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 258912983}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69c56d6ba085e9a4ea51b662b4d5ab05, type: 3}
+  m_Script: {fileID: 11500000, guid: 1d85d0d3cedab454ba19ba10608e3659, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moves: {fileID: 258912988}
-  enemy: 0
-  Player: {fileID: 258912986}
-  Enemy: {fileID: 2093905786}
   Event:
     m_PersistentCalls:
       m_Calls:
@@ -340,6 +337,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  Player: {fileID: 258912986}
+  Enemy: {fileID: 2093905786}
 --- !u!114 &258912988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1176,7 +1175,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 258912987}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AttackInput, Assembly-CSharp
         m_MethodName: Heal
         m_Mode: 1
@@ -1796,7 +1795,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 258912987}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AttackInput, Assembly-CSharp
         m_MethodName: Attack
         m_Mode: 1
@@ -1893,8 +1892,8 @@ GameObject:
   - component: {fileID: 2093905785}
   - component: {fileID: 2093905787}
   - component: {fileID: 2093905786}
-  - component: {fileID: 2093905788}
   - component: {fileID: 2093905789}
+  - component: {fileID: 2093905788}
   m_Layer: 5
   m_Name: Enemy
   m_TagString: Untagged
@@ -2001,13 +2000,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2093905784}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69c56d6ba085e9a4ea51b662b4d5ab05, type: 3}
+  m_Script: {fileID: 11500000, guid: 51c0ea17fd325ba4f8cde427a99427e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moves: {fileID: 2093905789}
-  enemy: 1
-  Player: {fileID: 258912986}
-  Enemy: {fileID: 2093905786}
   Event:
     m_PersistentCalls:
       m_Calls:
@@ -2023,6 +2019,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  Player: {fileID: 258912986}
+  Enemy: {fileID: 2093905786}
 --- !u!114 &2093905789
 MonoBehaviour:
   m_ObjectHideFlags: 0
