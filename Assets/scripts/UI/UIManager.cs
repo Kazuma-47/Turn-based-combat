@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-   public GameObject AtkMenu;
-   public GameObject MainMenu;
+   [SerializeField] private GameObject AtkMenu;
+   [SerializeField] private GameObject MainMenu;
 
    public void ChangeUIAtk()
    {
@@ -13,6 +13,11 @@ public class UIManager : MonoBehaviour
       MainMenu.SetActive(false);
    }
 
+   public void ChangeUIMenu()
+   {
+      AtkMenu.SetActive(false);
+      MainMenu.SetActive(true);
+   }
    public void updateUI()
    {
         

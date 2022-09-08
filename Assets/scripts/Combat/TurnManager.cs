@@ -12,6 +12,8 @@ using TMPro;
 
 public class TurnManager : MonoBehaviour
 {
+    private State _state;
+    [SerializeField] private UIManager ui;
     private enum State
     {
         PlayerTurn,
@@ -27,10 +29,26 @@ public class TurnManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown("space"))
+        if (_state == State.PlayerTurn)
         {
-            health = health - 5;
+            ui.ChangeUIAtk();
+        }
+        else if (_state == State.EnemyTurn)
+        {
+            ui.ChangeUIMenu();
+        }
+    }
+
+    public void ChangeState()
+    {
+        if (_state == State.PlayerTurn)
+        {
+            _state = State.EnemyTurn;
         }
 
+        else if (_state == State.EnemyTurn)
+        {
+            _state = State.PlayerTurn;
+        }
     }
 }
