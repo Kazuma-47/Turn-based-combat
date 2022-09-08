@@ -13,20 +13,15 @@ using TMPro;
 public class TurnManager : MonoBehaviour
 {
     private State _state;
+    [SerializeField] private UnityEvent onEnemyTurn = new UnityEvent();
+    [SerializeField] private UnityEvent onUIUpdate = new UnityEvent();
     [SerializeField] private UIManager ui;
     private enum State
     {
         PlayerTurn,
         EnemyTurn
     }
-
-    public int health;
-
-    public void Start()
-    {
-        print(health);
-    }
-
+    
     private void Update()
     {
 
@@ -37,6 +32,8 @@ public class TurnManager : MonoBehaviour
         else if (_state == State.EnemyTurn)
         {
             ui.ChangeUIMenu();
+            onEnemyTurn.Invoke();
+            
         }
     }
 

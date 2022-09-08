@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class PlayerInput : AttackInput
 {
-    public CharacterStats Player;
-    public CharacterStats Enemy;
+    
     public void Attack()
     {
-        useTackle(Enemy);
+        Enemy.currentHP = useTackle(Enemy);
     }
 
     public void Heal()
