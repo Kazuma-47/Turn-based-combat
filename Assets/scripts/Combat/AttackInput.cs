@@ -33,7 +33,12 @@ public class AttackInput : MonoBehaviour
     }
     public int useHeal(CharacterStats stats)
     {
+        
         var newHP = moves.Heal(stats.currentHP, stats.MaxHP);
+        if (newHP > stats.MaxHP)
+        {
+            newHP = (int)Mathf.Round(stats.MaxHP);
+        }
         Event.Invoke();
         updateHp.Invoke(Player.currentHP, Enemy.currentHP);
         return newHP;

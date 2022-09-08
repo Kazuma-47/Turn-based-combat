@@ -16,12 +16,11 @@ public class Moves : MonoBehaviour
         int dmg = 10;
         TargetHP = TargetHP - dmg;
         return TargetHP;
-
     }
 
     public int Heal(int currentHealth , float maxHealth)
     {
        int amount = (int)Mathf.Round(maxHealth / 100f * 20f);
-        return currentHealth + amount;
+       return currentHealth + amount;
     }
 }
