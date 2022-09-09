@@ -15,7 +15,7 @@ public class AttackInput : MonoBehaviour
     public CharacterStats Enemy;
     public Moves moves;
     [SerializeField] private UnityEvent Event = new UnityEvent();
-    [SerializeField] private UnityEvent<int,int> updateHp = new UnityEvent<int,int>();
+    [SerializeField] protected UnityEvent<int,int> updateHp = new UnityEvent<int,int>();
     [SerializeField] private UnityEvent<CharacterStats,CharacterStats> start = new UnityEvent<CharacterStats,CharacterStats>();
 
     private void Start()
@@ -29,7 +29,6 @@ public class AttackInput : MonoBehaviour
     {
         var newHP = moves.Tackle(stats.currentHP);
         Event.Invoke();
-        updateHp.Invoke(Player.currentHP, Enemy.currentHP);
         return newHP;
 
     }
@@ -42,7 +41,6 @@ public class AttackInput : MonoBehaviour
             newHP = (int)Mathf.Round(stats.MaxHP);
         }
         Event.Invoke();
-        updateHp.Invoke(Player.currentHP, Enemy.currentHP);
         return newHP;
     }
     

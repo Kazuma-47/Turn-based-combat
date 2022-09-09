@@ -16,7 +16,7 @@ public class EnemyAI : AttackInput
         {
             print("attacked");
             Player.currentHP = useTackle(Player);
-            //update healhbar player
+            updateHp.Invoke(Player.currentHP, Enemy.currentHP);
 
 
             if (Player.currentHP <= 0) 
@@ -28,8 +28,8 @@ public class EnemyAI : AttackInput
         {
             print("healed");
             Enemy.currentHP = useHeal(Enemy);
-
-            //update healhbar enemy
+            updateHp.Invoke(Player.currentHP, Enemy.currentHP);
+            
         }
 
     }

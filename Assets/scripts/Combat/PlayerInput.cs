@@ -9,7 +9,7 @@ public class PlayerInput : AttackInput
     public void Attack()
     {
         Enemy.currentHP = useTackle(Enemy);
-        //update healhbar enemy
+        updateHp.Invoke(Player.currentHP, Enemy.currentHP);
 
         if (Enemy.currentHP <= 0)
         {
@@ -20,6 +20,6 @@ public class PlayerInput : AttackInput
     public void Heal()
     {
          Player.currentHP = useHeal(Player);
-        //update healhbar player
+         updateHp.Invoke(Player.currentHP, Enemy.currentHP);
     }
 }
