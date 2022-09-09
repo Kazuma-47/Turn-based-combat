@@ -12,12 +12,12 @@ public class EnemyAI : AttackInput
         if (Ai >= 1)
         {
             print("attacked");
-            Player.currentHP = useTackle(Enemy);
+            Player.currentHP = useTackle(Player);
         }
         else
         {
             print("healed");
-            Enemy.currentHP = useHeal(Player);
+            Enemy.currentHP = useHeal(Enemy);
         }
 
     }
