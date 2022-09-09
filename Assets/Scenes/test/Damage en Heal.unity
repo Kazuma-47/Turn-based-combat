@@ -321,6 +321,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d85d0d3cedab454ba19ba10608e3659, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 258912986}
+  Enemy: {fileID: 2093905786}
   moves: {fileID: 258912988}
   Event:
     m_PersistentCalls:
@@ -337,8 +339,36 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  Player: {fileID: 258912986}
-  Enemy: {fileID: 2093905786}
+  updateHp:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 578743482}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: UpdateUI
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  start:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 578743482}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: SetValues
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &258912988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -538,6 +568,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AtkMenu: {fileID: 1770036740}
   MainMenu: {fileID: 1183974869}
+  playerHealthbar: {fileID: 258912984}
+  enemyHealthbar: {fileID: 2093905787}
 --- !u!4 &578743483
 Transform:
   m_ObjectHideFlags: 0
@@ -894,8 +926,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1e0cfbe5363d2a45bdd8b707a0cf99a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onEnemyTurn:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2093905788}
+        m_TargetAssemblyTypeName: EnemyAI, Assembly-CSharp
+        m_MethodName: Attack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onUIUpdate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 578743482}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: ChangeUIMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   ui: {fileID: 578743482}
-  health: 0
 --- !u!114 &1249607361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1175,8 +1236,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: AttackInput, Assembly-CSharp
+      - m_Target: {fileID: 258912987}
+        m_TargetAssemblyTypeName: PlayerInput, Assembly-CSharp
         m_MethodName: Heal
         m_Mode: 1
         m_Arguments:
@@ -1795,8 +1856,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: AttackInput, Assembly-CSharp
+      - m_Target: {fileID: 258912987}
+        m_TargetAssemblyTypeName: PlayerInput, Assembly-CSharp
         m_MethodName: Attack
         m_Mode: 1
         m_Arguments:
@@ -2003,6 +2064,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51c0ea17fd325ba4f8cde427a99427e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 258912986}
+  Enemy: {fileID: 2093905786}
   moves: {fileID: 2093905789}
   Event:
     m_PersistentCalls:
@@ -2019,8 +2082,36 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  Player: {fileID: 258912986}
-  Enemy: {fileID: 2093905786}
+  updateHp:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 578743482}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: UpdateUI
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  start:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 578743482}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: SetValues
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2093905789
 MonoBehaviour:
   m_ObjectHideFlags: 0
