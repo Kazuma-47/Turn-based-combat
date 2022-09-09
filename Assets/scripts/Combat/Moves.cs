@@ -20,7 +20,7 @@ public class Moves : MonoBehaviour
 
     public int Heal(int currentHealth , float maxHealth)
     {
-       int amount = (int)Mathf.Round(maxHealth / 100f * 20f);
-       return currentHealth + amount;
+       int amount = (int)Mathf.Round(maxHealth / 100f * 20f); 
+        return currentHealth + amount;
     }
 }

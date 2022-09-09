@@ -13,7 +13,6 @@ public class CharacterStats : MonoBehaviour
     public static int LVL;
     public static int monsterHP = 30;
 
-
     public int[] moves;
 
     private void Start()
