@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 
 public class EnemyAI : AttackInput
@@ -18,8 +20,8 @@ public class EnemyAI : AttackInput
 
 
             if (Player.currentHP <= 0) 
-            { 
-                // verloren lose screen
+            {
+            SceneManager.LoadScene(sceneBuildIndex:2);
             }
         }
         else

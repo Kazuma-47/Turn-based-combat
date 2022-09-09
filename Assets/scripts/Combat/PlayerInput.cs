@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerInput : AttackInput
 {
@@ -12,7 +13,7 @@ public class PlayerInput : AttackInput
 
         if (Enemy.currentHP <= 0)
         {
-            //sethp en win screen
+        SceneManager.LoadScene(sceneBuildIndex: 3);
         }
     }
 

@@ -8,6 +8,7 @@ using UnityEngine.Events;
 using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
 
+
 public class AttackInput : MonoBehaviour
 {
     public CharacterStats Player;
@@ -21,6 +22,7 @@ public class AttackInput : MonoBehaviour
     {
         updateHp.Invoke(Player.currentHP, Enemy.currentHP);
         start.Invoke(Player, Enemy);
+       
     }
 
     public int useTackle(CharacterStats stats)
