@@ -1,12 +1,9 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Animations;
 using UnityEngine;
 
-public class DisplayTeam : MonoBehaviour
+public class DisplayCharacter : MonoBehaviour
 {
-    [SerializeField] private List<Transform> slots = new List<Transform>();
+    [SerializeField] protected List<Transform> slots = new List<Transform>();
 
     private void Awake()
     {
@@ -18,7 +15,7 @@ public class DisplayTeam : MonoBehaviour
         }
     }
 
-    public void InstantiateTeam(GameObject[] team )
+    public virtual void InstantiateTeam(GameObject[] team )
     {
         CleanSlots();
         for (int i = 0; i < team.Length; i++)

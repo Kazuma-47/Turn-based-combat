@@ -1,4 +1,5 @@
 using System;
+
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -22,7 +23,7 @@ public class TeamManager : MonoBehaviour
             //Check if the character has already been added to the array
             if (Array.Exists(currentTeam, x => x == member))
             {
-                int index = currentTeam.findIndex(member);
+                int index = currentTeam.CEfindIndex(member);
                 RemoveMember(index);    print("found in array");   
                 break; 
             }
