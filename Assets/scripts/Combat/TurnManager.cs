@@ -7,7 +7,6 @@ using TMPro;
 using UnityEngine.Events;
 using UnityEditor.SceneManagement;
 using UnityEngine.SceneManagement;
-using TMPro;
 
 
 public class TurnManager : MonoBehaviour
@@ -20,6 +19,7 @@ public class TurnManager : MonoBehaviour
     {
         PlayerTurn,
         EnemyTurn
+        
     }
     
     private void Update()
