@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4ad3b5cfd0910742ab5b07c4f57057a, type: 3}
   m_Name: Test character
   m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: 173bad0f4818a6745ab53125afe42c6b, type: 3}
   name: Test character
   baseHp: 100
+  lvl: 0
+  Monster: 0
+  HpScale: 1.025
   MoveIds: 01000000020000000000000000000000

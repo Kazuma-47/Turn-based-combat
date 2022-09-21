@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4ad3b5cfd0910742ab5b07c4f57057a, type: 3}
   m_Name: Test Enemy
   m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: 349836396c6481446afb921114a96072, type: 3}
   name: monster
   baseHp: 30
   lvl: 12
