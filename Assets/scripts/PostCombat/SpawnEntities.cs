@@ -8,8 +8,9 @@ public class SpawnEntities : DisplayCharacter
 {
     #region getters & setters //helpt met het sorteren naar code
     [SerializeField] private GameObject baseEntity;
-    [SerializeField] private CreatePlayer[] _availableUnits;
-    [SerializeField] private CreatePlayer _player;
+    //[SerializeField] private CreatePlayer[] _availableUnits;
+    [SerializeField] private Enemie _availableUnits;
+    [SerializeField] private Enemie _player;
     [SerializeField] private Transform playerslot;
 
 
@@ -18,16 +19,24 @@ public class SpawnEntities : DisplayCharacter
 
     private void Start()
     {
-        SpawnCharacters(_player,_availableUnits);
+        GetBattleInfo();
     }
-
-    public void GetBattleInfo(CreatePlayer player, CreatePlayer[] enemies)
+    
+    public void GetBattleInfo()
     {
-        _player = player;
-        _availableUnits = enemies;
+        GameObject[] Info = GameObject.FindGameObjectsWithTag("Ground");
+        _availableUnits = Info[0].GetComponent<EnemiePlacer>().enemy;
+        SpawnDemo();
     }
 
-    public void SpawnCharacters(CreatePlayer player,CreatePlayer[] enemies)
+    public void SpawnDemo()
+    {
+        var character2 = Instantiate(baseEntity, slots[0].transform.position, quaternion.identity,slots[0]);
+        character2.GetComponent<CharacterLoader>()._playerInfo = _availableUnits;
+    }
+    
+    
+    public void SpawnCharacters(Enemie player,Enemie[] enemies)
     {
         for (int i = 0; i < enemies.Length; i++)
         {

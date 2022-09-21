@@ -5,12 +5,13 @@ using UnityEngine;
 
 public class CharacterLoader : MonoBehaviour
 {
-    [HideInInspector] public CreatePlayer _playerInfo;
+    //[HideInInspector] 
+    public Enemie _playerInfo;
     private SpriteRenderer _sprite;
 
     private void Start()
     {
         _sprite = GetComponent<SpriteRenderer>();
-        _sprite.sprite = _playerInfo.sprite;
+        _sprite.sprite = _playerInfo.Artworks;
     }
 }

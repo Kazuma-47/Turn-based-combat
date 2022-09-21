@@ -8,12 +8,13 @@ public class EnemiePlacer : MonoBehaviour
 {
     public Enemie Enemie1;
     public Enemie Enemie2;
-    public static Enemie Enemie;
+    public Enemie enemy;
+   
     public int min;
     public int max;
     private void Start()
     {
-        Debug.Log(Enemie);
+        DontDestroyOnLoad(this.gameObject);
         Debug.Log(Enemie.Levelen);
     }
     private void Update()
@@ -33,13 +34,13 @@ public class EnemiePlacer : MonoBehaviour
         int Level = Random.Range(min, max);
         if (ene >= 10)
         {
-            Enemie = Enemie1;
+            enemy =Enemie1;
         }
         else 
         {
-            Enemie = Enemie2;
+            enemy = Enemie2;
         }
-        Enemie.SetLevel(Level);
+        enemy.SetLevel(Level);
         SceneManager.LoadScene(1);
     }
     public void Win() 
