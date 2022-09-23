@@ -9,9 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e87c98ef87ed9524b8ff06f58ecd0628, type: 3}
-  m_Name: Charles
+  m_Script: {fileID: 11500000, guid: d841c3d9a7862094b8b01c027f220747, type: 3}
+  m_Name: TheChosenJuan
   m_EditorClassIdentifier: 
-  Name: Charles
-  Artworks: {fileID: 21300000, guid: 54e2a14f4a7461e4bb0b63e4151d20e5, type: 3}
-  Health: 20
+  Name: TheChosenJuan
+  Artworks: {fileID: 0}
+  Health: 50
+  AD: 40
+  CurrentHP: 0
+  MaxHP: 0
