@@ -1,36 +1,33 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 using UnityEngine.Events;
-using UnityEditor.SceneManagement;
-using UnityEngine.SceneManagement;
 
 
 public class TurnManager : MonoBehaviour
 {
     private State _state;
     [SerializeField] private UnityEvent onEnemyTurn = new UnityEvent();
-    [SerializeField] private UnityEvent onUIUpdate = new UnityEvent();
     [SerializeField] private UIManager ui;
+    public Enemie player;
+    public Enemie enemie;
+
     private enum State
     {
         PlayerTurn,
         EnemyTurn
         
     }
-    
+
+
     private void Update()
     {
-
         if (_state == State.PlayerTurn)
         {
-            ui.ChangeUIAtk();
+            ui.SetCharacterUI(player);
         }
         else if (_state == State.EnemyTurn)
         {
+            
             ui.ChangeUIMenu();
             onEnemyTurn.Invoke();
             

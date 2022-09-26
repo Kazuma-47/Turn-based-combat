@@ -14,4 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Charles
   Artworks: {fileID: 21300000, guid: 54e2a14f4a7461e4bb0b63e4151d20e5, type: 3}
-  Health: 20
+  Health: -159
+  Vijand: {fileID: 0}
+  moves:
+  - {fileID: 11400000, guid: 8766c9d96cc557040985446e3638fe19, type: 2}
+  - {fileID: 11400000, guid: 1d6c3e9c8e352fe4e8a0aa3d3f473096, type: 2}
+  - {fileID: 11400000, guid: e15649f3b9c99aa4895d7366053b0baf, type: 2}

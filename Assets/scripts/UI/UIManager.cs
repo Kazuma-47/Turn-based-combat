@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,8 +9,9 @@ public class UIManager : MonoBehaviour
 {
    [SerializeField] private GameObject AtkMenu;
    [SerializeField] private GameObject MainMenu;
-   [SerializeField] private Slider playerHealthbar;
-   [SerializeField] private Slider enemyHealthbar;
+   [SerializeField] private TextMeshProUGUI[] SelectableMoves = new TextMeshProUGUI[3];
+
+
 
    public void ChangeUIAtk()
    {
@@ -16,23 +19,21 @@ public class UIManager : MonoBehaviour
       MainMenu.SetActive(false);
    }
 
+   public void SetCharacterUI(Enemie character)
+   {
+      for (int i = 0; i < SelectableMoves.Length; i++)
+      {
+         SelectableMoves[i].text = character.moves[i].name;
+      }
+   }
    public void ChangeUIMenu()
    {
       AtkMenu.SetActive(false);
       MainMenu.SetActive(true);
    }
-   public void UpdateUI(int playerHealth , int enemyHealth)
-   {
-      playerHealthbar.value = playerHealth;
-      enemyHealthbar.value = enemyHealth;
-   }
 
-   public void SetValues(CharacterStats player, CharacterStats enemy)
+   public void ShowSelectable()
    {
-      playerHealthbar.maxValue = player.MaxHP;
-      playerHealthbar.value = player.currentHP;
-
-      enemyHealthbar.maxValue = enemy.MaxHP;
-      enemyHealthbar.value = enemy.currentHP;
+      
    }
 }

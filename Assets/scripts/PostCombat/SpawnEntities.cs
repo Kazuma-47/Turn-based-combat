@@ -1,7 +1,9 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Events;
 
 
 public class SpawnEntities : DisplayCharacter
@@ -12,6 +14,9 @@ public class SpawnEntities : DisplayCharacter
     [SerializeField] private Enemie _availableUnits;
     [SerializeField] private Enemie _player;
     [SerializeField] private Transform playerslot;
+    public TurnManager turnManager;
+
+
 
 
     #endregion
@@ -31,8 +36,15 @@ public class SpawnEntities : DisplayCharacter
 
     public void SpawnDemo()
     {
+        
+        
+        var PlayerCharacter = Instantiate(baseEntity, playerslot.transform.position, quaternion.identity, playerslot);
+        PlayerCharacter.GetComponent<CharacterLoader>()._playerInfo = _player;
+        turnManager.player = _player;
+        
         var character2 = Instantiate(baseEntity, slots[0].transform.position, quaternion.identity,slots[0]);
         character2.GetComponent<CharacterLoader>()._playerInfo = _availableUnits;
+        turnManager.enemie = _availableUnits;
     }
     
     

@@ -9,7 +9,6 @@ public class EnemiePlacer : MonoBehaviour
     public Enemie Enemie1;
     public Enemie Enemie2;
     public Enemie enemy;
-   
     public int min;
     public int max;
     private void Start()
@@ -34,7 +33,7 @@ public class EnemiePlacer : MonoBehaviour
         int Level = Random.Range(min, max);
         if (ene >= 10)
         {
-            enemy =Enemie1;
+            enemy = Enemie1;
         }
         else 
         {

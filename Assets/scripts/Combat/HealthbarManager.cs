@@ -1,13 +1,15 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
+
 public class HealthbarManager : MonoBehaviour
 {
+    public Slider PlayerHealth;
+    public Slider EnemyHealth;
 
-    public void StoreHealth()
+    public void SetHealth()
     {
-
+        print("hello");
     }
 }
+
+

@@ -345,6 +345,8 @@ GameObject:
   - component: {fileID: 75330871}
   - component: {fileID: 75330872}
   - component: {fileID: 75330873}
+  - component: {fileID: 75330874}
+  - component: {fileID: 75330875}
   m_Layer: 0
   m_Name: UI
   m_TagString: Untagged
@@ -360,7 +362,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 75330870}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 86.8572}
+  m_LocalPosition: {x: 0, y: 0, z: 146.95721}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 833465173}
@@ -387,11 +389,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onEnemyTurn:
     m_PersistentCalls:
-      m_Calls: []
-  onUIUpdate:
-    m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 75330875}
+        m_TargetAssemblyTypeName: EnemyAI, Assembly-CSharp
+        m_MethodName: Attack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   ui: {fileID: 75330873}
+  player: {fileID: 0}
+  enemie: {fileID: 0}
 --- !u!114 &75330873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -406,8 +419,64 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AtkMenu: {fileID: 516909785}
   MainMenu: {fileID: 596383923}
-  playerHealthbar: {fileID: 0}
-  enemyHealthbar: {fileID: 0}
+  SelectableMoves:
+  - {fileID: 1292966781}
+  - {fileID: 378287984}
+  - {fileID: 1826520818}
+--- !u!114 &75330874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75330870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69c56d6ba085e9a4ea51b662b4d5ab05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onTurnEnd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 75330872}
+        m_TargetAssemblyTypeName: TurnManager, Assembly-CSharp
+        m_MethodName: ChangeState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &75330875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75330870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51c0ea17fd325ba4f8cde427a99427e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onTurnEnd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 75330872}
+        m_TargetAssemblyTypeName: TurnManager, Assembly-CSharp
+        m_MethodName: ChangeState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &103489426
 GameObject:
   m_ObjectHideFlags: 0
@@ -912,14 +981,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 75330872}
-        m_TargetAssemblyTypeName: TurnManager, Assembly-CSharp
-        m_MethodName: Attack
+      - m_Target: {fileID: 75330875}
+        m_TargetAssemblyTypeName: AttackInput, Assembly-CSharp
+        m_MethodName: atk1
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1389,9 +1458,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Heal
-
-'
+  m_text: '-'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 37d9e1d884dc1ee47bcc797fe56cc383, type: 2}
   m_sharedMaterial: {fileID: 9193266417391434639, guid: 37d9e1d884dc1ee47bcc797fe56cc383, type: 2}
@@ -2114,7 +2181,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: 52.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4001,7 +4068,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1048674617}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.359919, y: -0.28496388, z: 87.2}
+  m_LocalPosition: {x: 2.359919, y: -0.28496388, z: 147.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 478070334}
@@ -4296,14 +4363,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 75330872}
-        m_TargetAssemblyTypeName: TurnManager, Assembly-CSharp
-        m_MethodName: attackbutton3
-        m_Mode: 1
+      - m_Target: {fileID: 75330875}
+        m_TargetAssemblyTypeName: AttackInput, Assembly-CSharp
+        m_MethodName: atk1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4403,7 +4470,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Tackle
+  m_text: '-'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 37d9e1d884dc1ee47bcc797fe56cc383, type: 2}
   m_sharedMaterial: {fileID: 9193266417391434639, guid: 37d9e1d884dc1ee47bcc797fe56cc383, type: 2}
@@ -4780,7 +4847,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1400505620}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.73, y: -1.48, z: 0}
+  m_LocalPosition: {x: -2.73, y: -0.87, z: 64.76001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 961911452}
@@ -5872,14 +5939,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 75330872}
-        m_TargetAssemblyTypeName: TurnManager, Assembly-CSharp
-        m_MethodName: Attack
+      - m_Target: {fileID: 75330875}
+        m_TargetAssemblyTypeName: AttackInput, Assembly-CSharp
+        m_MethodName: atk1
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -5972,11 +6039,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slots: []
   baseEntity: {fileID: 7486933939060451402, guid: c031c18f449227743b3120b00c32f704, type: 3}
-  _availableUnits:
-  - {fileID: 11400000, guid: 316db8d7c4dc872488c63869a966b3ae, type: 2}
-  - {fileID: 11400000, guid: ec33006c020e9214dadd1503a74f4519, type: 2}
-  _player: {fileID: 11400000, guid: ec33006c020e9214dadd1503a74f4519, type: 2}
+  _availableUnits: {fileID: 0}
+  _player: {fileID: 11400000, guid: 2e49513c439583241b00956b4b8ca8aa, type: 2}
   playerslot: {fileID: 1400505621}
+  turnManager: {fileID: 75330872}
 --- !u!1 &1805129411
 GameObject:
   m_ObjectHideFlags: 0
@@ -6064,7 +6130,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Attack
+  m_text: '-'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 37d9e1d884dc1ee47bcc797fe56cc383, type: 2}
   m_sharedMaterial: {fileID: 9193266417391434639, guid: 37d9e1d884dc1ee47bcc797fe56cc383, type: 2}
@@ -6291,7 +6357,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1870349248
 Transform:
   m_ObjectHideFlags: 0

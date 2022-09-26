@@ -10,6 +10,7 @@ public class Enemie : ScriptableObject
     public int Health;
     public static int Levelen;
     public Enemie Vijand;
+    public Move[] moves = new Move[3];
     public void SetLevel(int Level)
     {
         Levelen = Level;

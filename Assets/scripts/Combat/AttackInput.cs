@@ -11,37 +11,26 @@ using UnityEngine.UI;
 
 public class AttackInput : MonoBehaviour
 {
-    public CharacterStats Player;
-    public CharacterStats Enemy;
-    public Moves moves;
-    [SerializeField] private UnityEvent Event = new UnityEvent();
-    [SerializeField] protected UnityEvent<int,int> updateHp = new UnityEvent<int,int>();
-    [SerializeField] private UnityEvent<CharacterStats,CharacterStats> start = new UnityEvent<CharacterStats,CharacterStats>();
+    private GameObject _currentTarget;
+    [SerializeField] private UnityEvent onTurnEnd = new UnityEvent();
 
-    private void Start()
+    public void atk1(int move)
     {
-        updateHp.Invoke(Player.currentHP, Enemy.currentHP);
-        start.Invoke(Player, Enemy);
-       
-    }
-
-    public int useTackle(CharacterStats stats)
-    {
-        var newHP = moves.Tackle(stats.currentHP);
-        Event.Invoke();
-        return newHP;
-
-    }
-    public int useHeal(CharacterStats stats)
-    {
+        Enemie target = GetComponent<TurnManager>().enemie;
+        Enemie player = GetComponent<TurnManager>().player;
         
-        var newHP = moves.Heal(stats.currentHP, stats.MaxHP);
-        if (newHP > stats.MaxHP)
-        {
-            newHP = (int)Mathf.Round(stats.MaxHP);
-        }
-        Event.Invoke();
-        return newHP;
+        target.Health -= player.moves[move].damage;
+        print("player attacked and used " + player.moves[move].name);
+        onTurnEnd.Invoke();
+    }
+
+    public void enemyattack(Move attack)
+    {
+        Enemie target = GetComponent<TurnManager>().player;
+        target.Health -= attack.damage;
+        print("enemy attacked and used " + attack.name);
+        onTurnEnd.Invoke();
     }
     
 }
+    
