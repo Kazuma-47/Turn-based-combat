@@ -15,5 +15,11 @@ MonoBehaviour:
   Name: Charles
   Artworks: {fileID: 0}
   Health: 10
+  MaxHP: 0
+  CurrentHP: 0
+  Factor: 1.024
   AD: 18
-  EXPGive: 15
+  CurrentAD: 0
+  Levelen: 24
+  EXPGive: 0
+  EXP: 4

@@ -15,6 +15,12 @@ MonoBehaviour:
   Name: TheChosenJuan
   Artworks: {fileID: 0}
   Health: 50
+  MaxHP: 60
+  CurrentHP: 60
+  Factor: 1.024
   AD: 40
-  CurrentHP: 0
-  MaxHP: 0
+  CurrentAD: 48
+  Levelen: 8
+  EXP: 10
+  Stonks: 50
+  EXPCap: 60

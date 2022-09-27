@@ -6,10 +6,15 @@ using UnityEngine;
 public class Enemie : BaseCharacter
 {
     public int EXPGive;
-    public static int Levelen;
+    public int EXP;
 
-    public void SetLevel(int Level)
+    public void Level(int min, int max)
     {
-        Levelen = Level;
+        Levelen = Random.Range(min, max);
     }
+    public void EXPWin()
+    {
+        EXPGive = (int)Mathf.Floor(Mathf.Pow(Factor, Levelen) * EXP);
+    }
+
 }

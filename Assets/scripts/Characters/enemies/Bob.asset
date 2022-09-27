@@ -15,5 +15,11 @@ MonoBehaviour:
   Name: Bob
   Artworks: {fileID: 0}
   Health: 25
+  MaxHP: 0
+  CurrentHP: 0
+  Factor: 1.024
   AD: 30
-  EXPGive: 40
+  CurrentAD: 0
+  Levelen: 21
+  EXPGive: 0
+  EXP: 0

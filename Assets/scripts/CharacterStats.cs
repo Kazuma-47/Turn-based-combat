@@ -17,13 +17,14 @@ public class CharacterStats : MonoBehaviour
 
     private void Start()
     {
-       
+       /*
         LVL = createPlayer.lvl;
         baseHP = createPlayer.baseHp;
         moves = createPlayer.MoveIds;
         MaxHP =Mathf.Pow(createPlayer.HpScale, LVL) * baseHP;
         int maxHp =(int)Mathf.Round(MaxHP);
         currentHP = maxHp;
+       */
     }
 
     public void GetHP(int lastHp)
