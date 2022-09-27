@@ -23,6 +23,7 @@ public class UIManager : MonoBehaviour
    {
       for (int i = 0; i < SelectableMoves.Length; i++)
       {
+         if (character.moves[i] == null) break;
          SelectableMoves[i].text = character.moves[i].name;
       }
    }
