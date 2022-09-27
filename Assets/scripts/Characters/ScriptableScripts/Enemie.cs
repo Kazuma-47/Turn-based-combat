@@ -7,6 +7,7 @@ public class Enemie : BaseCharacter
 {
     public int EXPGive;
     public int EXP;
+    public Move[] moves = new Move[3];
 
     public void Level(int min, int max)
     {

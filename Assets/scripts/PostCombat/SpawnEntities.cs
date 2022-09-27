@@ -29,8 +29,8 @@ public class SpawnEntities : DisplayCharacter
     
     public void GetBattleInfo()
     {
-        GameObject[] Info = GameObject.FindGameObjectsWithTag("Ground");
-        _availableUnits = Info[0].GetComponent<EnemiePlacer>().enemy;
+        GameObject Info = GameObject.FindWithTag("Ground");
+        _availableUnits = Info.GetComponent<EnemiePlacer>().Enemie;
         SpawnDemo();
     }
 

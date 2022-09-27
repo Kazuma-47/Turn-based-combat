@@ -21,7 +21,7 @@ public class EnemiePlacer : MonoBehaviour
     {
         if (Input.GetKeyDown("w"))
         {
-            _Player.player.EXPGet(51);
+            Encounter();
         }
         if (Input.GetKey("e"))
         {
