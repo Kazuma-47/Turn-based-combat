@@ -18,10 +18,18 @@ public class AttackInput : MonoBehaviour
     {
         Enemie target = GetComponent<TurnManager>().enemie;
         Enemie player = GetComponent<TurnManager>().player;
-        
-        target.Health -= player.moves[move].damage;
-        print("player attacked and used " + player.moves[move].name);
-        onTurnEnd.Invoke();
+
+        if (player.moves[move].UsageLeft != 0)
+        {
+            target.Health -= player.moves[move].damage;
+            print("player attacked and used " + player.moves[move].name);
+            player.moves[move].UsageLeft -= 1;
+            onTurnEnd.Invoke();
+        }
+        else
+        {
+            print("no more usage");
+        }
     }
 
     public void enemyattack(Move attack)
@@ -30,6 +38,12 @@ public class AttackInput : MonoBehaviour
         target.Health -= attack.damage;
         print("enemy attacked and used " + attack.name);
         onTurnEnd.Invoke();
+    }
+
+    public void guard()
+    {
+        Enemie player = GetComponent<TurnManager>().player;
+
     }
     
 }

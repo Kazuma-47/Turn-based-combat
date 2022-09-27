@@ -17,8 +17,7 @@ public class TurnManager : MonoBehaviour
         EnemyTurn
         
     }
-
-
+    
     private void Update()
     {
         if (_state == State.PlayerTurn)
