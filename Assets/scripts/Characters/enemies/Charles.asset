@@ -20,6 +20,7 @@ MonoBehaviour:
   Factor: 1.024
   AD: 18
   CurrentAD: 0
-  Levelen: 24
+  Levelen: 28
   EXPGive: 0
   EXP: 4
+  grade: 1
