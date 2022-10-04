@@ -19,12 +19,13 @@ public class UIManager : MonoBehaviour
       MainMenu.SetActive(false);
    }
 
-   public void SetCharacterUI(Enemie character)
+   public void SetCharacterUI(Players character)
    {
+      
       for (int i = 0; i < SelectableMoves.Length; i++)
       {
-         if (character.moves[i] == null) break;
-         SelectableMoves[i].text = character.moves[i].name;
+         if (character.Moves[i] == null) break;
+         SelectableMoves[i].text = character.Moves[i].name;
       }
    }
    public void ChangeUIMenu()

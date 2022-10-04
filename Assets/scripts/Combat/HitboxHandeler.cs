@@ -6,9 +6,9 @@ public class HitboxHandeler : MonoBehaviour
 {
 
     
-    public Enemie ReturnSelected()
+    public Players ReturnSelected()
     {
-        Enemie target = GetComponent<CharacterLoader>()._playerInfo;
+        Players target = GetComponent<CharacterLoader>()._playerInfo;
         return target;
     }
 }

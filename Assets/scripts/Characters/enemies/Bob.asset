@@ -13,13 +13,21 @@ MonoBehaviour:
   m_Name: Bob
   m_EditorClassIdentifier: 
   Name: Bob
-  Artworks: {fileID: 0}
-  Health: 25
-  MaxHP: 0
-  CurrentHP: 0
+  Artworks: {fileID: 21300000, guid: 7e3aab7425bf756429ed8c04b4bd55ce, type: 3}
+  Health: 0
+  MaxHP: 40
+  CurrentHP: 40
   Factor: 1.024
   AD: 30
   CurrentAD: 0
-  Levelen: 21
+  Levelen: 15
+  Moves:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   EXPGive: 0
   EXP: 0
+  moves:
+  - {fileID: 11400000, guid: 1d6c3e9c8e352fe4e8a0aa3d3f473096, type: 2}
+  - {fileID: 11400000, guid: 8766c9d96cc557040985446e3638fe19, type: 2}
+  - {fileID: 0}

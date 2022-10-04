@@ -12,13 +12,9 @@ public class SpawnEntities : DisplayCharacter
     [SerializeField] private GameObject baseEntity;
     //[SerializeField] private CreatePlayer[] _availableUnits;
     [SerializeField] private Enemie _availableUnits;
-    [SerializeField] private Enemie _player;
+    [SerializeField] private Players _player;
     [SerializeField] private Transform playerslot;
     public TurnManager turnManager;
-
-
-
-
     #endregion
 
 
@@ -31,20 +27,25 @@ public class SpawnEntities : DisplayCharacter
     {
         GameObject Info = GameObject.FindWithTag("Ground");
         _availableUnits = Info.GetComponent<EnemiePlacer>().Enemie;
+        Info = GameObject.FindWithTag("Player");
+        _player = Info.GetComponent<CreatePlayer>().player;
         SpawnDemo();
     }
 
     public void SpawnDemo()
     {
-        
-        
         var PlayerCharacter = Instantiate(baseEntity, playerslot.transform.position, quaternion.identity, playerslot);
+        
+        PlayerCharacter.GetComponent<CharacterLoader>().entity = CharacterLoader.Entity.player;
         PlayerCharacter.GetComponent<CharacterLoader>()._playerInfo = _player;
+        PlayerCharacter.gameObject.tag = "PlayerUnit"; 
         turnManager.player = _player;
         
+
         var character2 = Instantiate(baseEntity, slots[0].transform.position, quaternion.identity,slots[0]);
-        character2.GetComponent<CharacterLoader>()._playerInfo = _availableUnits;
-        turnManager.enemie = _availableUnits;
+        character2.GetComponent<CharacterLoader>()._enemieInfo = _availableUnits;
+        turnManager.enemy = _availableUnits;
+        character2.gameObject.tag = "EnemyUnit";
     }
     
     
@@ -53,11 +54,11 @@ public class SpawnEntities : DisplayCharacter
         for (int i = 0; i < enemies.Length; i++)
         {
             var character = Instantiate(baseEntity, slots[i].transform.position, Quaternion.identity, slots[i]);
-            character.GetComponent<CharacterLoader>()._playerInfo = enemies[i];
+            character.GetComponent<CharacterLoader>()._enemieInfo = enemies[i];
         }
         print("spawnPlayer");
          var character2 = Instantiate(baseEntity, playerslot.transform.position, quaternion.identity,playerslot);
-         character2.GetComponent<CharacterLoader>()._playerInfo = player;
+         character2.GetComponent<CharacterLoader>()._enemieInfo = player;
     }
 
     

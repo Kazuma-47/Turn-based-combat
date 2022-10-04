@@ -8,7 +8,7 @@ public class Players : BaseCharacter
     public int EXP;
     public int Stonks;
     public int EXPCap;
-    
+
     public void EXPGet(int EXPGive)
     {
         EXP = EXP + EXPGive;

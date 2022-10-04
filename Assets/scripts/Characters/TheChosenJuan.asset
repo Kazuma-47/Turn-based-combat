@@ -13,14 +13,18 @@ MonoBehaviour:
   m_Name: TheChosenJuan
   m_EditorClassIdentifier: 
   Name: TheChosenJuan
-  Artworks: {fileID: 0}
-  Health: 50
-  MaxHP: 60
-  CurrentHP: 60
+  Artworks: {fileID: 21300000, guid: f37ec6b2772b46c4688e5082489f0d4b, type: 3}
+  Health: 11
+  MaxHP: 100
+  CurrentHP: 100
   Factor: 1.024
   AD: 40
   CurrentAD: 48
   Levelen: 8
+  Moves:
+  - {fileID: 11400000, guid: 92e1d62cf419ac046b09de6aaafd706c, type: 2}
+  - {fileID: 11400000, guid: 8766c9d96cc557040985446e3638fe19, type: 2}
+  - {fileID: 11400000, guid: 1d6c3e9c8e352fe4e8a0aa3d3f473096, type: 2}
   EXP: 10
   Stonks: 50
   EXPCap: 60

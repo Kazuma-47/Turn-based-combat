@@ -5,22 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/final/BeginScreen.unity
-    guid: 315ecdfc813166649a6443657921bf26
-  - enabled: 0
-    path: Assets/Scenes/test/Damage en Heal.unity
-    guid: 969ffb666fc39a343b37967f62a85c0a
-  - enabled: 0
-    path: Assets/Scenes/proto/lose.unity
-    guid: 66fa2d02d709b334e945643b061d0200
-  - enabled: 0
-    path: Assets/Scenes/proto/win.unity
-    guid: 2e0707e38b83d554690c4c4f3caa3d5f
   - enabled: 1
     path: Assets/Scenes/test/EnemiePlacing.unity
     guid: b5be51540f61060469093bbb23e84aba
   - enabled: 1
     path: Assets/Scenes/proto/Combat.unity
     guid: 777cb81a7df10f848998e86e719c44e7
+  - enabled: 1
+    path: Assets/Scenes/proto/lose.unity
+    guid: 66fa2d02d709b334e945643b061d0200
+  - enabled: 1
+    path: Assets/Scenes/proto/win.unity
+    guid: 2e0707e38b83d554690c4c4f3caa3d5f
   m_configObjects: {}

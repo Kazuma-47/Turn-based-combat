@@ -3,13 +3,18 @@ using UnityEngine.UIElements;
 
 public class HealthbarManager : MonoBehaviour
 {
-    public Slider PlayerHealth;
-    public Slider EnemyHealth;
-
-    public void SetHealth()
+    public void HealthbarUpdate()
     {
-        print("hello");
+        var EnemyList = GameObject.FindGameObjectsWithTag("EnemyUnit");
+        var Player = GameObject.FindWithTag("PlayerUnit");
+
+        foreach (var enemy in EnemyList)
+        {
+            enemy.GetComponent<CharacterLoader>().UpdateCurrenthealth();
+        }
+        Player.gameObject.GetComponent<CharacterLoader>().UpdateCurrenthealth();
     }
+
 }
 
 

@@ -14,7 +14,7 @@ public class BaseCharacter : ScriptableObject
     public int AD;
     public int CurrentAD;
     public float Levelen;
-    //public int Moves;
+    public Move[] Moves = new Move[3];
     public void Stats()
     {
         MaxHP = (int)Mathf.Floor(Mathf.Pow(Factor,Levelen)*Health);
