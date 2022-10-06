@@ -10,7 +10,7 @@ public class EnemyAI : AttackInput
     
     public void Attack()
     {
-        Move[] moves = GetComponent<TurnManager>().enemy.moves;
+        Move[] moves = GetComponent<TurnManager>().enemy.Moves;
         int Ai = Random.Range(0, 9);
         
 

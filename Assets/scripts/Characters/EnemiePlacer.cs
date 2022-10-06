@@ -8,7 +8,7 @@ public class EnemiePlacer : MonoBehaviour
 {
     public Enemie Enemie;
     public CreatePlayer _Player;
-    public Enemie[] lijst;
+    public Enemie[] enemyList;
     public int min;
     public int max;
     public int TotalWeigth;
@@ -16,7 +16,7 @@ public class EnemiePlacer : MonoBehaviour
     public void Start()
     {
         _Player = GameObject.FindWithTag("Player").GetComponent<CreatePlayer>();
-        foreach (var Enemie in lijst)
+        foreach (var Enemie in enemyList)
         {
             TotalWeigth +=Enemie.grade;
         }
@@ -41,14 +41,13 @@ public class EnemiePlacer : MonoBehaviour
     }
     public void Win()
     {
-        Enemie.EXPWin();
-        _Player.player.EXPGet(Enemie.EXPGive);
+        _Player.player.EXPGet(Enemie.EXPWin());
         SceneManager.LoadScene(0);
     }
     public void EnemieChoser(int totalWeigth)
     {
         int weight = Random.Range(1, totalWeigth);
-        foreach (var enemy in lijst)
+        foreach (var enemy in enemyList)
         {
             if (weight <= enemy.grade)
             {

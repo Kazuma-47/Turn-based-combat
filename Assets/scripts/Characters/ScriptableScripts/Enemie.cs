@@ -12,9 +12,10 @@ public class Enemie : BaseCharacter
     {
         Levelen = Random.Range(min, max);
     }
-    public void EXPWin()
+    public int EXPWin()
     {
         EXPGive = (int)Mathf.Floor(Mathf.Pow(Factor, Levelen) * EXP);
+        return EXPGive;
     }
 
 }
