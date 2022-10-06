@@ -8,6 +8,7 @@ TagManager:
   - Ground
   - NonSelectable
   - Enemy
+  - "\xC0rea"
   layers:
   - Default
   - TransparentFX

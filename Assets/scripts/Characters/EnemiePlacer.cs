@@ -6,27 +6,23 @@ using UnityEngine.SceneManagement;
 
 public class EnemiePlacer : MonoBehaviour
 {
-    public Enemie Enemie;
-    public CreatePlayer _Player;
-    public Enemie[] lijst;
+    public Enemie enemy;
+    public CreatePlayer player;
+    public Enemie[] enemyList;
     public int min;
     public int max;
-    public int TotalWeigth;
+    public int totalWeigth;
 
     public void Start()
     {
-        _Player = GameObject.FindWithTag("Player").GetComponent<CreatePlayer>();
-        foreach (var Enemie in lijst)
-        {
-            TotalWeigth +=Enemie.grade;
-        }
-        Debug.Log(TotalWeigth);
+        player = GameObject.FindWithTag("Player").GetComponent<CreatePlayer>();
+        DontDestroyOnLoad(this.gameObject);
     }
     private void Update()
     {
         if (Input.GetKeyDown("w"))
         {
-            EnemieChoser(TotalWeigth);
+            Encounter();
         }
         if (Input.GetKey("e"))
         {
@@ -35,26 +31,31 @@ public class EnemiePlacer : MonoBehaviour
     }
     public void Encounter()
     {
-        EnemieChoser(TotalWeigth);
-        DontDestroyOnLoad(this.gameObject);
+        var area = GameObject.Find("Area").GetComponent<Area>();
+        totalWeigth = area.totalWeight;
+        min = area.min;
+        max = area.max;
+        EnemieChoser(totalWeigth);
         SceneManager.LoadScene(1);
     }
     public void Win()
     {
-        Enemie.EXPWin();
-        _Player.player.EXPGet(Enemie.EXPGive);
-        SceneManager.LoadScene(0);
+        enemy.ExpWin();
+        player.player.ExpGet(enemy.expGive);
+        SceneManager.LoadScene(4);
     }
     public void EnemieChoser(int totalWeigth)
     {
+        var area = GameObject.Find("Area").GetComponent<Area>();
         int weight = Random.Range(1, totalWeigth);
-        foreach (var enemy in lijst)
+        foreach (var enemy in enemyList)
         {
+            Debug.Log(weight);
             if (weight <= enemy.grade)
             {
-                enemy.Levelen = Random.Range(min, max);
-                Enemie = enemy;
-                Debug.Log(Enemie);
+                enemy.level = Random.Range(area.min, area.max);
+                this.enemy = enemy;
+                Debug.Log(this.enemy);
                 return;
             }
             weight -= enemy.grade;

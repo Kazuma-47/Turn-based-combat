@@ -5,20 +5,20 @@ using UnityEngine;
 
 public class BaseCharacter : ScriptableObject
 {
-    public string Name;
-    public Sprite Artworks;
-    public float Health;
-    public int MaxHP;
-    public int CurrentHP;
-    public float Factor = 1.024f;
-    public int AD;
-    public int CurrentAD;
-    public float Levelen;
+    public string names;
+    public Sprite artworks;
+    public float health;
+    public int maxHp;
+    public int currentHp;
+    public float scale = 1.024f;
+    public int ad;
+    public int currentAd;
+    public float level;
     //public int Moves;
     public void Stats()
     {
-        MaxHP = (int)Mathf.Floor(Mathf.Pow(Factor,Levelen)*Health);
-        CurrentHP = MaxHP;
-        CurrentAD = (int)Mathf.Floor(Mathf.Pow(Factor, Levelen) * AD);
+        maxHp = (int)Mathf.Floor(Mathf.Pow(scale,level)*health);
+        currentHp = maxHp;
+        currentAd = (int)Mathf.Floor(Mathf.Pow(scale, level) * ad);
     }
 }

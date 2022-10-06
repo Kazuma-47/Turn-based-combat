@@ -5,16 +5,12 @@ using UnityEngine;
 [CreateAssetMenu]
 public class Enemie : BaseCharacter
 {
-    public int EXPGive;
-    public int EXP;
+    public int expGive;
+    public int exp;
     public int grade;
-    public void Level(int min, int max)
+    public void ExpWin()
     {
-        Levelen = Random.Range(min, max);
-    }
-    public void EXPWin()
-    {
-        EXPGive = (int)Mathf.Floor(Mathf.Pow(Factor, Levelen) * EXP);
+        expGive = (int)Mathf.Floor(Mathf.Pow(scale, level) * exp);
     }
 
 }
