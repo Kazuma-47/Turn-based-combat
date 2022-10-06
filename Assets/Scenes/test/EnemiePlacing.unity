@@ -152,12 +152,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c364ba762f983bf4d8a24b9d20260e62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemie1: {fileID: 11400000, guid: 033ec4948a56b4b4590807cdc3a5f9cc, type: 2}
-  Enemie2: {fileID: 11400000, guid: 5675c54b091d2ee4ebdd601fe951e1c7, type: 2}
   Enemie: {fileID: 0}
   _Player: {fileID: 0}
+  lijst:
+  - {fileID: 11400000, guid: 5675c54b091d2ee4ebdd601fe951e1c7, type: 2}
+  - {fileID: 11400000, guid: 033ec4948a56b4b4590807cdc3a5f9cc, type: 2}
+  - {fileID: 11400000, guid: 5edf58b7c56f17047a27c1b141a0acb5, type: 2}
   min: 10
   max: 30
+  TotalWeigth: 0
 --- !u!4 &259024431
 Transform:
   m_ObjectHideFlags: 0

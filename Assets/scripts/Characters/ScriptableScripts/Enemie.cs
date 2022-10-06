@@ -7,8 +7,7 @@ public class Enemie : BaseCharacter
 {
     public int EXPGive;
     public int EXP;
-    public Move[] moves = new Move[3];
-
+    public int grade;
     public void Level(int min, int max)
     {
         Levelen = Random.Range(min, max);

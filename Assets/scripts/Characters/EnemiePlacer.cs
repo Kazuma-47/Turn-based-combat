@@ -6,52 +6,58 @@ using UnityEngine.SceneManagement;
 
 public class EnemiePlacer : MonoBehaviour
 {
-    public Enemie Enemie1;
-    public Enemie Enemie2;
     public Enemie Enemie;
     public CreatePlayer _Player;
+    public Enemie[] lijst;
     public int min;
     public int max;
-    
+    public int TotalWeigth;
+
     public void Start()
     {
         _Player = GameObject.FindWithTag("Player").GetComponent<CreatePlayer>();
+        foreach (var Enemie in lijst)
+        {
+            TotalWeigth +=Enemie.grade;
+        }
+        Debug.Log(TotalWeigth);
     }
     private void Update()
     {
         if (Input.GetKeyDown("w"))
         {
-            Encounter();
+            EnemieChoser(TotalWeigth);
         }
         if (Input.GetKey("e"))
         {
             Win();
         }
     }
-    public void Encounter() 
+    public void Encounter()
     {
-        EnemieChoser();
+        EnemieChoser(TotalWeigth);
         DontDestroyOnLoad(this.gameObject);
         SceneManager.LoadScene(1);
     }
-    public void Win() 
+    public void Win()
     {
         Enemie.EXPWin();
         _Player.player.EXPGet(Enemie.EXPGive);
         SceneManager.LoadScene(0);
     }
-    public void EnemieChoser()
+    public void EnemieChoser(int totalWeigth)
     {
-        int ene = Random.Range(0, 20);
-
-        if (ene >= 10)
+        int weight = Random.Range(1, totalWeigth);
+        foreach (var enemy in lijst)
         {
-            Enemie = Enemie1;
+            if (weight <= enemy.grade)
+            {
+                enemy.Levelen = Random.Range(min, max);
+                Enemie = enemy;
+                Debug.Log(Enemie);
+                return;
+            }
+            weight -= enemy.grade;
         }
-        else
-        {
-            Enemie = Enemie2;
-        }
-        Enemie.Level(min, max);
     }
 }

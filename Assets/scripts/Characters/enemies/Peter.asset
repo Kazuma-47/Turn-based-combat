@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 148d5a9e6c6a4164e9e43cca50579b50, type: 3}
-  m_Name: Bob
+  m_Name: Peter
   m_EditorClassIdentifier: 
-  Name: Bob
+  Name: 
   Artworks: {fileID: 0}
-  Health: 25
+  Health: 0
   MaxHP: 0
   CurrentHP: 0
   Factor: 1.024
-  AD: 30
+  AD: 0
   CurrentAD: 0
-  Levelen: 12
+  Levelen: 0
   EXPGive: 0
   EXP: 0
-  grade: 5
+  grade: 2
