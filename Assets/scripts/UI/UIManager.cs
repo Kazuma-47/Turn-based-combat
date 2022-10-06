@@ -7,35 +7,31 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-   [SerializeField] private GameObject AtkMenu;
-   [SerializeField] private GameObject MainMenu;
-   [SerializeField] private TextMeshProUGUI[] SelectableMoves = new TextMeshProUGUI[3];
+   [SerializeField] private GameObject atkMenu;
+   [SerializeField] private GameObject mainMenu;
+   [SerializeField] private TextMeshProUGUI[] selectableMoves = new TextMeshProUGUI[3];
 
 
 
-   public void ChangeUIAtk()
+   public void ChangeUIAtk()     //switches menu in UI
    {
-      AtkMenu.SetActive(true);
-      MainMenu.SetActive(false);
+      atkMenu.SetActive(true);
+      mainMenu.SetActive(false);
    }
 
-   public void SetCharacterUI(Players character)
+   public void SetCharacterUI(Players character)      //fills in Ui info of the player 
    {
       
-      for (int i = 0; i < SelectableMoves.Length; i++)
+      for (int i = 0; i < selectableMoves.Length; i++)
       {
          if (character.moves[i] == null) break;
-         SelectableMoves[i].text = character.moves[i].name;
+         selectableMoves[i].text = character.moves[i].name;
       }
    }
-   public void ChangeUIMenu()
+   public void ChangeUIMenu()             //switches the menu back
    {
-      AtkMenu.SetActive(false);
-      MainMenu.SetActive(true);
+      atkMenu.SetActive(false);
+      mainMenu.SetActive(true);
    }
-
-   public void ShowSelectable()
-   {
-      
-   }
+   
 }

@@ -6,14 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class TurnManager : MonoBehaviour
 {
-    private State _state;
+    private State state;
     [SerializeField] private UnityEvent onEnemyTurn = new UnityEvent();
     [SerializeField] private UnityEvent onTurnEnd = new UnityEvent();
     [SerializeField] private UIManager ui;
     public Players player;
     public Enemie enemy;
 
-    private enum State
+    private enum State              //explains in which fase we are in combat
     {
         PlayerTurn,
         EnemyTurn
@@ -23,11 +23,11 @@ public class TurnManager : MonoBehaviour
     private void Update()
     {
         
-        if (_state == State.PlayerTurn)
+        if (state == State.PlayerTurn)
         {
             ui.SetCharacterUI(player);
         }
-        else if (_state == State.EnemyTurn)
+        else if (state == State.EnemyTurn)
         {
             
             ui.ChangeUIMenu();
@@ -36,17 +36,17 @@ public class TurnManager : MonoBehaviour
         }
     }
 
-    public void ChangeState()
+    public void ChangeState()   //switches the state to show who's turn it is
     {
-        if (_state == State.PlayerTurn)
+        if (state == State.PlayerTurn)
         {
-            _state = State.EnemyTurn;
+            state = State.EnemyTurn;
             CheckWin();
             onTurnEnd.Invoke();
         }
-        else if (_state == State.EnemyTurn)
+        else if (state == State.EnemyTurn)
         {
-            _state = State.PlayerTurn;
+            state = State.PlayerTurn;
             CheckWin();
             onTurnEnd.Invoke();
         }

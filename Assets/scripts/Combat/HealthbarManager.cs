@@ -5,14 +5,14 @@ public class HealthbarManager : MonoBehaviour
 {
     public void HealthbarUpdate()
     {
-        var EnemyList = GameObject.FindGameObjectsWithTag("EnemyUnit");
-        var Player = GameObject.FindWithTag("PlayerUnit");
+        var _enemyList = GameObject.FindGameObjectsWithTag("EnemyUnit");        //finds every enemy in the scene and puts it in an array
+        var _player = GameObject.FindWithTag("PlayerUnit");
 
-        foreach (var enemy in EnemyList)
+        foreach (var enemy in _enemyList)
         {
             enemy.GetComponent<CharacterLoader>().UpdateCurrenthealth();
         }
-        Player.gameObject.GetComponent<CharacterLoader>().UpdateCurrenthealth();
+        _player.gameObject.GetComponent<CharacterLoader>().UpdateCurrenthealth();
     }
 
 }

@@ -1,30 +1,26 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Net.Sockets;
-using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.PlayerLoop;
-using UnityEngine.UI;
-
 
 public class AttackInput : MonoBehaviour
 {
-    private GameObject _currentTarget;
     [SerializeField] private UnityEvent onTurnEnd = new UnityEvent();
+    private Enemie enemy;
+    private Players player;
 
-    public void atk1(int move)
+    private void Start()
     {
-        Enemie target = GetComponent<TurnManager>().enemy;
-        Players player = GetComponent<TurnManager>().player;
-        if (player.moves[move] != null)
+        enemy = GetComponent<TurnManager>().enemy;
+        player = GetComponent<TurnManager>().player;
+    }
+
+    public void atk1(int _move)
+    {
+        if (player.moves[_move] != null)        //check als het slot niks is  zo wel gebeurt niks
         {
-            if (player.moves[move].UsageLeft != 0)
+            if (player.moves[_move].UsageLeft != 0)             //als de move nog gebruikt kan worden
             {
-                target.currentHp -= player.moves[move].damage;
-                print("player attacked and used " + player.moves[move].name);
-                player.moves[move].UsageLeft -= 1;
+                enemy.currentHp -= player.moves[_move].damage;
+                player.moves[_move].UsageLeft -= 1;
                 
                 onTurnEnd.Invoke();
             }
@@ -35,11 +31,9 @@ public class AttackInput : MonoBehaviour
         }
     }
 
-    public void enemyattack(Move attack)
+    public void EnemyAttack(Move _attack)
     {
-        Players target = GetComponent<TurnManager>().player;
-        target.currentHp -= attack.damage;
-        print("enemy attacked and used " + attack.name);
+        player.currentHp -= _attack.damage;
         onTurnEnd.Invoke();
     }
 

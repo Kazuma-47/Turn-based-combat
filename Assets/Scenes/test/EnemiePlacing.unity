@@ -152,15 +152,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf7aed053e07563439fe4c94a7d59c71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  placer: {fileID: 0}
-  enemies:
+  enemyList:
   - {fileID: 11400000, guid: 033ec4948a56b4b4590807cdc3a5f9cc, type: 2}
   - {fileID: 11400000, guid: 5675c54b091d2ee4ebdd601fe951e1c7, type: 2}
   - {fileID: 11400000, guid: 5edf58b7c56f17047a27c1b141a0acb5, type: 2}
-  min: 10
-  max: 15
-  grades: 010000000200000003000000
-  totalWeight: 0
+  gradesList: 010000000200000003000000
+  min: 1
+  max: 5
 --- !u!4 &1992552259
 Transform:
   m_ObjectHideFlags: 0
