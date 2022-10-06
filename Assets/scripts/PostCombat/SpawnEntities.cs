@@ -38,8 +38,9 @@ public class SpawnEntities : DisplayCharacter
         
         PlayerCharacter.GetComponent<CharacterLoader>().entity = CharacterLoader.Entity.player;
         PlayerCharacter.GetComponent<CharacterLoader>()._playerInfo = _player;
-        PlayerCharacter.gameObject.tag = "PlayerUnit"; 
+        PlayerCharacter.gameObject.tag = "PlayerUnit";
         turnManager.player = _player;
+        
         
 
         var character2 = Instantiate(baseEntity, slots[0].transform.position, quaternion.identity,slots[0]);

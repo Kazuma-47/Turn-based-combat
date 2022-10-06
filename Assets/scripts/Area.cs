@@ -26,6 +26,8 @@ public class Area : MonoBehaviour
         }
         Debug.Log(totalWeight);
         placer.enemyList = enemies;
+        placer.TotalWeigth = totalWeight;
+        placer.enemyList = enemies;
 
     }
 

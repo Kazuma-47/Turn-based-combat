@@ -13,14 +13,18 @@ MonoBehaviour:
   m_Name: Charles
   m_EditorClassIdentifier: 
   Name: Charles
-  Artworks: {fileID: 0}
+  Artworks: {fileID: 21300000, guid: f6f2d4df13f509b448bc75a435836143, type: 3}
   Health: 10
   MaxHP: 0
   CurrentHP: 0
   Factor: 1.024
   AD: 18
   CurrentAD: 0
-  Levelen: 28
+  Levelen: 29
+  Moves:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   EXPGive: 0
   EXP: 4
-  grade: 1
+  grade: 2

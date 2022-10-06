@@ -16,17 +16,13 @@ public class EnemiePlacer : MonoBehaviour
     public void Start()
     {
         _Player = GameObject.FindWithTag("Player").GetComponent<CreatePlayer>();
-        foreach (var Enemie in enemyList)
-        {
-            TotalWeigth +=Enemie.grade;
-        }
-        Debug.Log(TotalWeigth);
+        DontDestroyOnLoad(this.gameObject);
     }
     private void Update()
     {
         if (Input.GetKeyDown("w"))
         {
-            EnemieChoser(TotalWeigth);
+            Encounter();
         }
         if (Input.GetKey("e"))
         {
@@ -36,7 +32,6 @@ public class EnemiePlacer : MonoBehaviour
     public void Encounter()
     {
         EnemieChoser(TotalWeigth);
-        DontDestroyOnLoad(this.gameObject);
         SceneManager.LoadScene(1);
     }
     public void Win()
@@ -53,6 +48,7 @@ public class EnemiePlacer : MonoBehaviour
             {
                 enemy.Levelen = Random.Range(min, max);
                 Enemie = enemy;
+                Enemie.Stats();
                 Debug.Log(Enemie);
                 return;
             }

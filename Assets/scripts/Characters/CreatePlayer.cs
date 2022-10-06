@@ -8,5 +8,6 @@ public class CreatePlayer : MonoBehaviour
     public void Start() 
     {
         DontDestroyOnLoad(this.gameObject);
+        player.startUp();
     }
 }
