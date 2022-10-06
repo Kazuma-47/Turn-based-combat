@@ -5,17 +5,17 @@ using UnityEngine;
 [CreateAssetMenu]
 public class Enemie : BaseCharacter
 {
-    public int EXPGive;
-    public int EXP;
+    [SerializeField] private int baseExp;
+    private int expGive;
     public int grade;
     public void Level(int min, int max)
     {
-        Levelen = Random.Range(min, max);
+        level = Random.Range(min, max);
     }
     public int EXPWin()
     {
-        EXPGive = (int)Mathf.Floor(Mathf.Pow(Factor, Levelen) * EXP);
-        return EXPGive;
+        expGive = (int)Mathf.Floor(Mathf.Pow(factor, level) * baseExp);
+        return expGive;
     }
 
 }

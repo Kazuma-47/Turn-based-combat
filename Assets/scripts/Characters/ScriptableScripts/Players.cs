@@ -5,31 +5,31 @@ using UnityEngine;
 [CreateAssetMenu]
 public class Players : BaseCharacter
 {
-    public int EXP;
-    public int Stonks;
-    public int EXPCap;
+    [SerializeField] private int baseExp;
+    private int exp;
+    private int expCap;
 
-    public void EXPGet(int EXPGive)
+    public void ExpGet(int EXPGive)
     {
-        EXP = EXP + EXPGive;
-        if (EXP >= EXPCap)
+        exp = exp + EXPGive;
+        if (exp >= expCap)
         {
             LevelUp();
         }
-        Debug.Log(EXP);
+        Debug.Log(exp);
     }
 
     public void LevelUp()
     {
-        EXP = EXP - EXPCap; 
-        Levelen = Levelen + 1;
-        EXPCap = (int)Mathf.Floor(Mathf.Pow(Factor, Levelen) * Stonks);
+        exp = exp - expCap; 
+        level = level + 1;
+        expCap = (int)Mathf.Floor(Mathf.Pow(factor, level) * baseExp);
         Stats();
     }
-    public void startUp() 
+    public void StartUp() 
     {
-        Levelen = 5;
-        EXPCap = (int)Mathf.Floor(Mathf.Pow(Factor, Levelen) * Stonks);
+        level = 5;
+        expCap = (int)Mathf.Floor(Mathf.Pow(factor, level) * baseExp);
         Stats();
     }
 }

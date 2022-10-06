@@ -24,8 +24,8 @@ public class UIManager : MonoBehaviour
       
       for (int i = 0; i < SelectableMoves.Length; i++)
       {
-         if (character.Moves[i] == null) break;
-         SelectableMoves[i].text = character.Moves[i].name;
+         if (character.moves[i] == null) break;
+         SelectableMoves[i].text = character.moves[i].name;
       }
    }
    public void ChangeUIMenu()

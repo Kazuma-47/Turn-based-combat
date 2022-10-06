@@ -53,12 +53,12 @@ public class TurnManager : MonoBehaviour
     }
     public void CheckWin()
     {
-       if(enemy.CurrentHP <= 0f)
+       if(enemy.currentHp <= 0f)
        {
            SceneManager.LoadScene("win");
        }
 
-       if (player.CurrentHP <= 0f)
+       if (player.currentHp <= 0f)
        {
            SceneManager.LoadScene("lose");
        }

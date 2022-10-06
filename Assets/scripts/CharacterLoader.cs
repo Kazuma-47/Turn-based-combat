@@ -26,14 +26,14 @@ public class CharacterLoader : MonoBehaviour
         switch (entity)
         {
             case Entity.enemy:
-                LoadSkin(_enemieInfo.Artworks);
+                LoadSkin(_enemieInfo.sprite);
                 HealthBar.SetActive(true);
                 SetHealthbar();
                     
                 break;
 
             case Entity.player:
-                LoadSkin(_playerInfo.Artworks);
+                LoadSkin(_playerInfo.sprite);
                 SetHealthbar();
                 break;
         }
@@ -54,15 +54,15 @@ public class CharacterLoader : MonoBehaviour
         {
             case Entity.enemy:
                     bar = HealthBar.GetComponent<Slider>();
-                    bar.maxValue = _enemieInfo.MaxHP;
-                    bar.value = _enemieInfo.CurrentHP;
+                    bar.maxValue = _enemieInfo.maxHp;
+                    bar.value = _enemieInfo.currentHp;
                 break;
 
             case Entity.player:
                    HealthBar = GameObject.FindWithTag("Healthbar");
                    bar = HealthBar.GetComponent<Slider>();
-                   bar.maxValue = _playerInfo.MaxHP;
-                   bar.value = _playerInfo.CurrentHP;
+                   bar.maxValue = _playerInfo.maxHp;
+                   bar.value = _playerInfo.currentHp;
                 break;
         }
     }
@@ -72,11 +72,11 @@ public class CharacterLoader : MonoBehaviour
         switch (entity)
         {
             case Entity.enemy:
-                bar.value = _enemieInfo.CurrentHP;
+                bar.value = _enemieInfo.currentHp;
                 break;
 
             case Entity.player:
-                bar.value = _playerInfo.CurrentHP;
+                bar.value = _playerInfo.currentHp;
                 break;
         }
     }

@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class CreatePlayer : MonoBehaviour
 {
-    public Players player;
+    public Players _player;
     public void Start() 
     {
         DontDestroyOnLoad(this.gameObject);
-        player.startUp();
+        _player.StartUp();
     }
 }

@@ -4,34 +4,37 @@ using UnityEngine;
 
 public class Area : MonoBehaviour
 {
-    public EnemiePlacer placer;
-    public Enemie[] enemies;
-    public int min;
-    public int max;
-    public int[] grades;
-    public int totalWeight;
+    private EnemiePlacer _placer;
+
+    [SerializeField] private Enemie[] enemyList;
+    [SerializeField] private int[] gradesList;
+    [SerializeField] private int min;
+    [SerializeField] private int max;
+    private int totalWeight;
     private int i;
 
     public void Start()
     {
-        foreach (var enemy in enemies)
+        foreach (var enemy in enemyList)
         {
-            enemy.grade = grades[i];
+            enemy.grade = gradesList[i];
             i += 1;
         }
-        placer = GameObject.Find("placer").GetComponent<EnemiePlacer>();
-        foreach (var enemie in enemies)
+        _placer = GameObject.Find("placer").GetComponent<EnemiePlacer>();
+        foreach (var enemy in enemyList)
         {
-            totalWeight += enemie.grade;
+            totalWeight += enemy.grade;
         }
-        Debug.Log(totalWeight);
-        placer.enemyList = enemies;
-        placer.TotalWeigth = totalWeight;
-        placer.enemyList = enemies;
-        placer.min = min;
-        placer.max = max;
+
+        SetEnemieStats();
 
     }
-
+    public void SetEnemieStats()
+    {
+        _placer.totalWeigth = totalWeight;
+        _placer.enemyList = enemyList;
+        _placer.min = min;
+        _placer.max = max;
+    }
 
 }
