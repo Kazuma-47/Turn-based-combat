@@ -28,6 +28,8 @@ public class Area : MonoBehaviour
         placer.enemyList = enemies;
         placer.TotalWeigth = totalWeight;
         placer.enemyList = enemies;
+        placer.min = min;
+        placer.max = max;
 
     }
 

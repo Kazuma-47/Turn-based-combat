@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Tackle
   m_EditorClassIdentifier: 
   name: Tackle
-  damage: 19
-  UsageLeft: 19
+  damage: 5
+  UsageLeft: 9

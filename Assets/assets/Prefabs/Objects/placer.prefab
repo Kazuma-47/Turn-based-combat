@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3584336800744400873}
   - component: {fileID: 3584336800744400872}
   m_Layer: 0
-  m_Name: AreaFixer
+  m_Name: placer
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,6 +46,6 @@ MonoBehaviour:
   Enemie: {fileID: 0}
   _Player: {fileID: 0}
   enemyList: []
-  min: 10
-  max: 30
+  min: 0
+  max: 0
   TotalWeigth: 0

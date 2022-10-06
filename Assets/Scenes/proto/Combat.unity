@@ -721,7 +721,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 550623980}
         m_TargetAssemblyTypeName: AttackInput, Assembly-CSharp
         m_MethodName: atk1
         m_Mode: 3
@@ -3520,7 +3520,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 550623980}
         m_TargetAssemblyTypeName: AttackInput, Assembly-CSharp
         m_MethodName: atk1
         m_Mode: 3
@@ -4887,7 +4887,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 550623980}
         m_TargetAssemblyTypeName: AttackInput, Assembly-CSharp
         m_MethodName: atk1
         m_Mode: 3
