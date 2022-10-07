@@ -310,9 +310,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 607fd441d7c18904f8ef27b2e1562052, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AtkMenu: {fileID: 516909785}
-  MainMenu: {fileID: 596383923}
-  SelectableMoves:
+  atkMenu: {fileID: 516909785}
+  mainMenu: {fileID: 596383923}
+  selectableMoves:
   - {fileID: 1292966781}
   - {fileID: 378287984}
   - {fileID: 1826520818}
