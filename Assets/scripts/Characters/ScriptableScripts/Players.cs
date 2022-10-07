@@ -9,9 +9,9 @@ public class Players : BaseCharacter
     private int exp;
     private int expCap;
 
-    public void ExpGet(int EXPGive)
+    public void ExpGet(int _expGive)
     {
-        exp = exp + EXPGive;
+        exp = exp + _expGive;
         if (exp >= expCap)
         {
             LevelUp();
