@@ -1,15 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
+
 
 public class UIManager : MonoBehaviour
 {
    [SerializeField] private GameObject atkMenu;
    [SerializeField] private GameObject mainMenu;
-   [SerializeField] private TextMeshProUGUI[] selectableMoves = new TextMeshProUGUI[3];
+   [SerializeField] private TextMeshProUGUI[] moveButtons = new TextMeshProUGUI[3];
 
 
 
@@ -22,10 +19,10 @@ public class UIManager : MonoBehaviour
    public void SetCharacterUI(Players character)      //fills in Ui info of the player 
    {
       
-      for (int i = 0; i < selectableMoves.Length; i++)
+      for (int i = 0; i < moveButtons.Length; i++)
       {
-         if (character.moves[i] == null) break;
-         selectableMoves[i].text = character.moves[i].name;
+         if (character.moves[i] == null) return;
+         moveButtons[i].text = character.moves[i].name;
       }
    }
    public void ChangeUIMenu()             //switches the menu back

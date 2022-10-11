@@ -13,16 +13,16 @@ MonoBehaviour:
   m_Name: TheChosenJuan
   m_EditorClassIdentifier: 
   factor: 1.024
-  characterName: Juan
+  characterName: player
   ad: 0
   baseHealth: 10
-  sprite: {fileID: 21300048, guid: c6551d5c9e174f44ba33a4a4e61b94d0, type: 3}
+  sprite: {fileID: 21300000, guid: 173bad0f4818a6745ab53125afe42c6b, type: 3}
   moves:
   - {fileID: 11400000, guid: 8766c9d96cc557040985446e3638fe19, type: 2}
   - {fileID: 11400000, guid: 1d6c3e9c8e352fe4e8a0aa3d3f473096, type: 2}
   - {fileID: 11400000, guid: 92e1d62cf419ac046b09de6aaafd706c, type: 2}
-  maxHp: 0
-  currentHp: 0
+  maxHp: 11
+  currentHp: 11
   currentAttackDamage: 0
   level: 5
   baseExp: 0

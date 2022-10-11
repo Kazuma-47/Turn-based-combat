@@ -1,12 +1,12 @@
 
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 
 
 public class CharacterLoader : MonoBehaviour
 {
-    //[HideInInspector] 
+    #region Declarations
+    [HideInInspector] 
     public enum Entity
     {
         enemy, 
@@ -20,7 +20,9 @@ public class CharacterLoader : MonoBehaviour
     [SerializeField]
     private GameObject HealthBar;
     private Slider bar;
-
+    #endregion
+    
+    #region Start/Update functions
     private void Start()
     {
         switch (entity)
@@ -41,7 +43,9 @@ public class CharacterLoader : MonoBehaviour
         Vector2 newSize = collider.gameObject.GetComponent<SpriteRenderer>().sprite.bounds.size;
         collider.size = newSize;   
     }
-
+    #endregion
+    
+    #region Load Character
     private void LoadSkin(Sprite skin)
     {
         _sprite = GetComponent<SpriteRenderer>();
@@ -80,4 +84,5 @@ public class CharacterLoader : MonoBehaviour
                 break;
         }
     }
+    #endregion
 }

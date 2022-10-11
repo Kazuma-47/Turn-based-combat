@@ -32,7 +32,7 @@ public class EnemiePlacer : MonoBehaviour
     public void Encounter()
     {
         EnemieChoser(totalWeigth);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("Combat");
     }
     public void Win()
     {

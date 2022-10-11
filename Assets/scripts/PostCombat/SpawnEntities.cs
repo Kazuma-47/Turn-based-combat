@@ -8,7 +8,7 @@ using UnityEngine.Events;
 
 public class SpawnEntities : DisplayCharacter
 {
-    #region getters & setters //helpt met het sorteren naar code
+    #region Declarations  //helpt met het sorteren naar code
     [SerializeField] private GameObject baseEntity;
     //[SerializeField] private CreatePlayer[] _availableUnits;
     [SerializeField] private Enemie _availableUnits;
@@ -17,12 +17,13 @@ public class SpawnEntities : DisplayCharacter
     public TurnManager turnManager;
     #endregion
 
-
+    #region Start/Update functions
     private void Start()
     {
         GetBattleInfo();
     }
-    
+    #endregion
+    #region Get info and spawn entities   
     public void GetBattleInfo()
     {
         GameObject Info = GameObject.FindWithTag("Ground");
@@ -48,8 +49,8 @@ public class SpawnEntities : DisplayCharacter
         turnManager.enemy = _availableUnits;
         character2.gameObject.tag = "EnemyUnit";
     }
-    
-    
+    #endregion
+    #region Unused code
     public void SpawnCharacters(Enemie player,Enemie[] enemies)
     {
         for (int i = 0; i < enemies.Length; i++)
@@ -61,7 +62,7 @@ public class SpawnEntities : DisplayCharacter
          var character2 = Instantiate(baseEntity, playerslot.transform.position, quaternion.identity,playerslot);
          character2.GetComponent<CharacterLoader>()._enemieInfo = player;
     }
-
+    #endregion
     
 }
 

@@ -4,17 +4,14 @@ using UnityEngine.Events;
 public class AttackInput : MonoBehaviour
 {
     [SerializeField] private UnityEvent onTurnEnd = new UnityEvent();
-    private Enemie enemy;
-    private Players player;
 
-    private void Start()
-    {
-        enemy = GetComponent<TurnManager>().enemy;
-        player = GetComponent<TurnManager>().player;
-    }
+
+
 
     public void atk1(int _move)
     {
+        var player = GetComponent<TurnManager>().player;
+        var enemy = GetComponent<TurnManager>().enemy;
         if (player.moves[_move] != null)        //check als het slot niks is  zo wel gebeurt niks
         {
             if (player.moves[_move].UsageLeft != 0)             //als de move nog gebruikt kan worden
@@ -33,6 +30,7 @@ public class AttackInput : MonoBehaviour
 
     public void EnemyAttack(Move _attack)
     {
+        var player = GetComponent<TurnManager>().player;
         player.currentHp -= _attack.damage;
         onTurnEnd.Invoke();
     }

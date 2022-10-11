@@ -312,7 +312,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   atkMenu: {fileID: 516909785}
   mainMenu: {fileID: 596383923}
-  selectableMoves:
+  moveButtons:
   - {fileID: 1292966781}
   - {fileID: 378287984}
   - {fileID: 1826520818}
@@ -4948,7 +4948,7 @@ GameObject:
   - component: {fileID: 1711452015}
   - component: {fileID: 1711452016}
   m_Layer: 0
-  m_Name: enemies
+  m_Name: entity spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
