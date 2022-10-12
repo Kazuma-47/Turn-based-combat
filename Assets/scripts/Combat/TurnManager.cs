@@ -9,8 +9,8 @@ public class TurnManager : MonoBehaviour
     [SerializeField] private UnityEvent onEnemyTurn = new UnityEvent();
     [SerializeField] private UnityEvent onTurnEnd = new UnityEvent();
     [SerializeField] private UIManager ui;
-    public Players player;
-    public Enemie enemy;
+    [HideInInspector] public Players player;
+    [HideInInspector] public Enemie enemy;
 
     private enum State              //explains in which fase we are in combat
     {
@@ -50,7 +50,7 @@ public class TurnManager : MonoBehaviour
             onTurnEnd.Invoke();
         }
     }
-    public void CheckWin()
+    private void CheckWin()
     {
        if(enemy.currentHp <= 0f)
        {
