@@ -20,10 +20,6 @@ public class EnemiePlacer : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown("w"))
-        {
-            Encounter();
-        }
         if (Input.GetKey("e"))
         {
             Win();
@@ -37,7 +33,7 @@ public class EnemiePlacer : MonoBehaviour
     public void Win()
     {
         player._player.ExpGet(enemy.EXPWin());
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
     public void EnemieChoser(int _totalWeigth)
     {
@@ -46,6 +42,7 @@ public class EnemiePlacer : MonoBehaviour
         {
             if (_weight <= _enemy.grade)
             {
+                Debug.Log(_enemy);
                 _enemy.level = Random.Range(min, max);
                 this.enemy = _enemy;
                 this.enemy.Stats();

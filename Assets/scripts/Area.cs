@@ -16,8 +16,9 @@ public class Area : MonoBehaviour
     public void Start()
     {
         placer = GameObject.Find("placer").GetComponent<EnemiePlacer>();
-        SetEnemieStats();
         CalculateWeight();
+        SetEnemieStats();
+
 
     }
     public void CalculateWeight()
