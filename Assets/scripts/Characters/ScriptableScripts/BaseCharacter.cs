@@ -22,10 +22,10 @@ public class BaseCharacter : ScriptableObject
         currentHp = maxHp;
         currentAttackDamage = (int)Mathf.Floor(Mathf.Pow(factor, level) * ad);
     }
-
-    public void Heal(int ammount)
+    //heals an entity for a amount of healing. it will cap its current health if its higher than its max health
+    public void Heal(int amount)
     {
-        currentHp += ammount;
+        currentHp += amount;
         if (currentHp > maxHp) currentHp = maxHp;
     }
 }

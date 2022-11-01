@@ -18,7 +18,7 @@ public class Grass : MonoBehaviour
     }
 
     private void Update()
-    {
+    {   //handles the chances of entering combat and what enemy will spawn
         if(inGrass == true)
         {
             if (player.horizontal != 0 || player.vertical != 0)

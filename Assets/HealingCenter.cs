@@ -9,15 +9,14 @@ public class HealingCenter : MonoBehaviour
    private bool activity;
 
    private void Start()
-   {
+   {//find the singleton player object
       player = GameObject.Find("Player").GetComponent<CreatePlayer>();
    }
 
    public void HealPlayer()
    {
-      print("healing");
+      //add 20% of max hp to player
       float healingAmmount = player._player.maxHp/ 100f * 20;
-      print(healingAmmount);
       player._player.Heal((int)healingAmmount);
    }
 }
