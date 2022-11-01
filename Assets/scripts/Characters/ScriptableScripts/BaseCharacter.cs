@@ -22,4 +22,10 @@ public class BaseCharacter : ScriptableObject
         currentHp = maxHp;
         currentAttackDamage = (int)Mathf.Floor(Mathf.Pow(factor, level) * ad);
     }
+
+    public void Heal(int ammount)
+    {
+        currentHp += ammount;
+        if (currentHp > maxHp) currentHp = maxHp;
+    }
 }
