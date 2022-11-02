@@ -3,5 +3,5 @@
 ### About the project.
 The goal of this project was to make a turn based rpg game. 
 
-### Code Game Mechanics:
+### Core Game Mechanics:
 
