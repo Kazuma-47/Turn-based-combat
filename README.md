@@ -4,4 +4,4 @@
 The goal of this project was to make a turn based rpg game. 
 
 ### Code Game Mechanics:
-1. [Combat](wiki/Combat)
+1. [Combat]Turn-based-combat/wiki/Combat)
