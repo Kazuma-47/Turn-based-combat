@@ -916,6 +916,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aecb930a77d824640a5fc74a1f7bdc02, type: 3}
+--- !u!1 &145348661030667036 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 145348660685518673, guid: aecb930a77d824640a5fc74a1f7bdc02, type: 3}
+  m_PrefabInstance: {fileID: 145348661030667035}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &145348661030667037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145348661030667036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf7aed053e07563439fe4c94a7d59c71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyList:
+  - {fileID: 11400000, guid: 033ec4948a56b4b4590807cdc3a5f9cc, type: 2}
+  - {fileID: 11400000, guid: 5675c54b091d2ee4ebdd601fe951e1c7, type: 2}
+  - {fileID: 11400000, guid: 5edf58b7c56f17047a27c1b141a0acb5, type: 2}
+  gradesList: 020000000100000003000000
+  min: 1
+  max: 5
 --- !u!1001 &6923147007237087829
 PrefabInstance:
   m_ObjectHideFlags: 0

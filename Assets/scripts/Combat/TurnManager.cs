@@ -39,27 +39,34 @@ public class TurnManager : MonoBehaviour
     {
         if (state == State.PlayerTurn)
         {
+            if (CheckWin()) return;
             state = State.EnemyTurn;
-            CheckWin();
             onTurnEnd.Invoke();
         }
         else if (state == State.EnemyTurn)
         {
+            if (CheckWin()) return;
             state = State.PlayerTurn;
-            CheckWin();
             onTurnEnd.Invoke();
         }
     }
-    public void CheckWin()
+    public bool CheckWin()
     {
        if(enemy.currentHp <= 0f)
        {
            SceneManager.LoadScene("win");
+           return true;
        }
-
-       if (player.currentHp <= 0f)
+       else if (player.currentHp <= 0f)
        {
            SceneManager.LoadScene("lose");
+           return true;
        }
+       else
+       {
+           return false;
+       }
+
+       return false;
     }
 }

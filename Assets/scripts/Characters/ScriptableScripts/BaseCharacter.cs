@@ -28,4 +28,11 @@ public class BaseCharacter : ScriptableObject
         currentHp += amount;
         if (currentHp > maxHp) currentHp = maxHp;
     }
+
+    public void TakeDamage(int amount)
+    {
+
+        currentHp -= amount;
+        if (currentHp < 0f) currentHp = 0;
+    }
 }

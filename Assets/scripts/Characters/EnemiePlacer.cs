@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class EnemiePlacer : MonoBehaviour
@@ -17,13 +14,6 @@ public class EnemiePlacer : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player").GetComponent<CreatePlayer>();
         DontDestroyOnLoad(this.gameObject);
-    }
-    private void Update()
-    {
-        if (Input.GetKey("e"))
-        {
-            Win();
-        }
     }
     public void Encounter()
     {

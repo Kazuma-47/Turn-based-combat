@@ -16,9 +16,8 @@ public class AttackInput : MonoBehaviour
         {
             if (player.moves[_move].UsageLeft != 0)             //als de move nog gebruikt kan worden
             {
-                enemy.currentHp -= player.moves[_move].damage;
+                enemy.TakeDamage(player.moves[_move].damage);
                 player.moves[_move].UsageLeft -= 1;
-                
                 onTurnEnd.Invoke();
             }
             else
