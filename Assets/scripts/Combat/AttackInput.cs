@@ -30,7 +30,7 @@ public class AttackInput : MonoBehaviour
     public void EnemyAttack(Move _attack)
     {
         var player = GetComponent<TurnManager>().player;
-        player.currentHp -= _attack.damage;
+        player.TakeDamage(_attack.damage);
         onTurnEnd.Invoke();
     }
 
