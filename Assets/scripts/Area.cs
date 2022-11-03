@@ -4,22 +4,25 @@ using UnityEngine;
 
 public class Area : MonoBehaviour
 {
+    #region Variables
     private EnemiePlacer placer;
-
     [SerializeField] private Enemie[] enemyList;
-    [SerializeField] private int[] gradesList;
-    [SerializeField] private int min;
-    [SerializeField] private int max;
-    private int totalWeight;
-    private int i;
+    [SerializeField] private int[] gradesList; // lijst  met gewichten van enemies
+    [SerializeField] private int min, max; // minimum level van enemy en maximum level van de enemy.
+    private int totalWeight; // totaal gewicht van alle enemies
+    private int i; // index
+    #endregion
 
+    #region StartUp
     public void Start()
     {
         placer = GameObject.Find("placer").GetComponent<EnemiePlacer>();
-        SetEnemieStats();
         CalculateWeight();
-
+        SetEnemieStats();
     }
+    #endregion
+
+    #region Functies
     public void CalculateWeight()
     {
         foreach (var _enemy in enemyList)
@@ -40,5 +43,5 @@ public class Area : MonoBehaviour
         placer.min = min;
         placer.max = max;
     }
-
+    #endregion
 }
