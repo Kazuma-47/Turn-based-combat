@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class EnemiePlacer : MonoBehaviour
@@ -18,17 +15,6 @@ public class EnemiePlacer : MonoBehaviour
         player = GameObject.FindWithTag("Player").GetComponent<CreatePlayer>();
         DontDestroyOnLoad(this.gameObject);
     }
-    private void Update()
-    {
-        if (Input.GetKeyDown("w"))
-        {
-            Encounter();
-        }
-        if (Input.GetKey("e"))
-        {
-            Win();
-        }
-    }
     public void Encounter()
     {
         EnemieChoser(totalWeigth);
@@ -37,7 +23,7 @@ public class EnemiePlacer : MonoBehaviour
     public void Win()
     {
         player._player.ExpGet(enemy.EXPWin());
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
     public void EnemieChoser(int _totalWeigth)
     {
@@ -46,6 +32,7 @@ public class EnemiePlacer : MonoBehaviour
         {
             if (_weight <= _enemy.grade)
             {
+                Debug.Log(_enemy);
                 _enemy.level = Random.Range(min, max);
                 this.enemy = _enemy;
                 this.enemy.Stats();

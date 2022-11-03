@@ -2,57 +2,28 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Player : MonoBehaviour
 {
-    public GameObject player;
+    Rigidbody2D body;
+    float steps;
+    [HideInInspector]
+    public float horizontal, vertical;
+    public float runSpeed;
+
+    private void Start()
+    {
+        body = GetComponent<Rigidbody2D>();
+    }
+    private void FixedUpdate()
+    {
+        body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
+    }
 
     private void Update()
     {
-        movement();
-    }
-
-    void movement()
-    {
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            transform.Translate(new Vector3(-5 * Time.deltaTime, 0, 0));
-        }
-
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            transform.Translate(new Vector3(5 * Time.deltaTime, 0, 0));
-        }
-
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            transform.Translate(new Vector3(0, -5 * Time.deltaTime, 0));
-        }
-
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            transform.Translate(new Vector3(0, 5 * Time.deltaTime, 0));
-        }
-
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.Translate(new Vector3(-5 * Time.deltaTime, 0, 0));
-        }
-
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.Translate(new Vector3(5 * Time.deltaTime, 0, 0));
-        }
-
-        if (Input.GetKey(KeyCode.W))
-        {
-            transform.Translate(new Vector3(0, -5 * Time.deltaTime, 0));
-        }
-
-        if (Input.GetKey(KeyCode.S))
-        {
-            transform.Translate(new Vector3(0, 5 * Time.deltaTime, 0));
-        }
-
+        horizontal = Input.GetAxisRaw("Horizontal");
+        vertical = Input.GetAxisRaw("Vertical");
     }
 }

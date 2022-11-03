@@ -7,6 +7,6 @@ public class Start : MonoBehaviour
 
     public void Play()
     {
-        SceneManager.LoadScene("EnemiePlacing");
+        SceneManager.LoadScene("OverworldDemo");
     }
 }
