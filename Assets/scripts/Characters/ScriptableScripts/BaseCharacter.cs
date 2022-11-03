@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
 
 public class BaseCharacter : ScriptableObject
 {
+    #region Variables
     [SerializeField] protected float factor = 1.024f;
     [SerializeField] private string characterName;
     [SerializeField] private int ad;
@@ -15,7 +13,9 @@ public class BaseCharacter : ScriptableObject
     public int maxHp, currentHp;
     public int currentAttackDamage;
     public float level;
+    #endregion
 
+    #region Functions
     public void Stats()
     {
         maxHp = (int)Mathf.Floor(Mathf.Pow(factor,level)*baseHealth);
@@ -23,16 +23,18 @@ public class BaseCharacter : ScriptableObject
         currentAttackDamage = (int)Mathf.Floor(Mathf.Pow(factor, level) * ad);
     }
     //heals an entity for a amount of healing. it will cap its current health if its higher than its max health
-    public void Heal(int amount)
+    public void Heal(int _amount)
     {
-        currentHp += amount;
+        currentHp += _amount;
         if (currentHp > maxHp) currentHp = maxHp;
     }
 
-    public void TakeDamage(int amount)
+    public void TakeDamage(int _amount)
     {
-
-        currentHp -= amount;
+        currentHp -= _amount;
         if (currentHp < 0f) currentHp = 0;
     }
+    #endregion
+
+    
 }
