@@ -168,8 +168,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 453f92e5d6f0bc941b2abfe905cebc36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inGrass: 0
-  player: {fileID: 0}
+  encounterSteps: 3
+  chance: 6
 --- !u!50 &145348660685518667
 Rigidbody2D:
   serializedVersion: 4

@@ -5,10 +5,12 @@ using UnityEngine;
 [CreateAssetMenu]
 public class Players : BaseCharacter
 {
+    #region Variables
     [SerializeField] private int baseExp;
-    private int exp;
-    private int expCap;
+    private int exp, expCap;
+    #endregion
 
+    #region Functions
     public void ExpGet(int _expGive)
     {
         exp = exp + _expGive;
@@ -16,7 +18,6 @@ public class Players : BaseCharacter
         {
             LevelUp();
         }
-        Debug.Log(exp);
     }
 
     public void LevelUp()
@@ -32,5 +33,5 @@ public class Players : BaseCharacter
         expCap = (int)Mathf.Floor(Mathf.Pow(factor, level) * baseExp);
         Stats();
     }
-    
+    #endregion
 }

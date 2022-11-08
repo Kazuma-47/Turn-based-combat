@@ -5,12 +5,16 @@ using Random = UnityEngine.Random;
 
 public class Grass : MonoBehaviour
 {
+    #region Variables
     private EnemiePlacer placer;
-    [SerializeField]
     private bool inGrass;
     float steps;
-    [SerializeField]
     private Player player;
+    [SerializeField] private int encounterSteps; // steps per encounter kans
+    [SerializeField] private int chance; // kans op encounter
+    #endregion
+
+    #region StartUp
     private void Start()
     {
         placer = GameObject.Find("placer").GetComponent<EnemiePlacer>();
@@ -18,28 +22,31 @@ public class Grass : MonoBehaviour
     }
 
     private void Update()
-    {   //handles the chances of entering combat and what enemy will spawn
+    {   //reguleerd de kans om een enemie tegen te komen
         if(inGrass == true)
         {
             if (player.horizontal != 0 || player.vertical != 0)
             {
                 steps += 5 * Time.deltaTime;
             }
-            if (steps >= 3)
+            if (steps >= encounterSteps)
             {
                 steps = 0;
-                int _rand = Random.Range(0, 6);
-                if (_rand >= 5)
+                int _rand = Random.Range(0, 9);
+                if (_rand >= chance)
                 {
                     placer.Encounter();
                 }
             }
         }
     }
+    #endregion
 
+    #region Functions
     public void SetActivity(bool activity)
     {
         inGrass = activity;
+        steps = encounterSteps;
     }
-    
+    #endregion
 }
