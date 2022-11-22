@@ -31,6 +31,7 @@ public class BaseCharacter : ScriptableObject
 
     public void TakeDamage(int _amount)
     {
+        Debug.Log("Taking DMG");
         currentHp -= _amount;
         if (currentHp < 0f) currentHp = 0;
     }

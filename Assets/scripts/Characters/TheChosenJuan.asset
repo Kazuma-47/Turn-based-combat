@@ -16,7 +16,7 @@ MonoBehaviour:
   characterName: player
   ad: 0
   baseHealth: 10
-  sprite: {fileID: 21300000, guid: 173bad0f4818a6745ab53125afe42c6b, type: 3}
+  sprite: {fileID: 21300000, guid: 000a4aa702ce2704f97ce3b87c562868, type: 3}
   moves:
   - {fileID: 11400000, guid: 8766c9d96cc557040985446e3638fe19, type: 2}
   - {fileID: 11400000, guid: 1d6c3e9c8e352fe4e8a0aa3d3f473096, type: 2}
