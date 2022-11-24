@@ -20,7 +20,7 @@ MonoBehaviour:
   moves:
   - {fileID: 11400000, guid: 8766c9d96cc557040985446e3638fe19, type: 2}
   - {fileID: 11400000, guid: 1d6c3e9c8e352fe4e8a0aa3d3f473096, type: 2}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 1d6c3e9c8e352fe4e8a0aa3d3f473096, type: 2}
   maxHp: 10
   currentHp: 0
   currentAttackDamage: 0

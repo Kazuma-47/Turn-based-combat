@@ -3,8 +3,8 @@ using UnityEngine.Events;
 
 public class AttackInput : MonoBehaviour
 {
-    [SerializeField] private UnityEvent<ParticleSystem,Transform> onAttack = new UnityEvent<ParticleSystem,Transform>();
-
+    [SerializeField] protected UnityEvent<ParticleSystem,Transform> onAttack = new UnityEvent<ParticleSystem,Transform>();
+    
     public void atk1(int _move)
     {
         var player = GetComponent<TurnManager>().player;
@@ -26,13 +26,7 @@ public class AttackInput : MonoBehaviour
         }
     }
 
-    public void EnemyAttack(Move _attack)
-    {
-        Players _player = GetComponent<TurnManager>().player;
-        _player.TakeDamage(_attack.damage);
-        var _playerPos = GameObject.FindWithTag("PlayerUnit");
-        onAttack.Invoke(_attack.VFX, _playerPos.transform);
-    }
+    
 
  
     
