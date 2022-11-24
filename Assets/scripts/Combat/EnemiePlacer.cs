@@ -43,8 +43,8 @@ public class EnemiePlacer : MonoBehaviour
             if (_weight <= _enemy.grade)
             {
                 Debug.Log(_enemy.enemy);
-                Debug.Log(_enemy.enemy.level);
                 _enemy.enemy.level = Random.Range(min, max);
+                Debug.Log(_enemy.enemy.level);
                 this.enemy = _enemy.enemy;
                 this.enemy.Stats();
                 return;

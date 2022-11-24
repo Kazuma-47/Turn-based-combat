@@ -32,7 +32,7 @@ public class Grass : MonoBehaviour
             if (steps >= encounterSteps)
             {
                 steps = 0;
-                int _rand = Random.Range(0, 9);
+                int _rand = Random.Range(0, 100);
                 if (_rand >= chance)
                 {
                     placer.Encounter();

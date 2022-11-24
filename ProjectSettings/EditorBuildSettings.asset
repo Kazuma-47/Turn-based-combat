@@ -4,26 +4,5 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/Implemented scenes/BeginScreen.unity
-    guid: 315ecdfc813166649a6443657921bf26
-  - enabled: 0
-    path: Assets/Scenes/test/EnemiePlacing.unity
-    guid: b5be51540f61060469093bbb23e84aba
-  - enabled: 0
-    path: Assets/Scenes/Implemented scenes/Combat.unity
-    guid: 036266dc8b8d1bf429d462b903521c47
-  - enabled: 1
-    path: Assets/Scenes/Implemented scenes/lose.unity
-    guid: 66fa2d02d709b334e945643b061d0200
-  - enabled: 1
-    path: Assets/Scenes/Implemented scenes/win.unity
-    guid: 2e0707e38b83d554690c4c4f3caa3d5f
-  - enabled: 1
-    path: Assets/Scenes/Implemented scenes/OverworldDemo.unity
-    guid: 594c70f1433c00e448926289342260b3
-  - enabled: 1
-    path: Assets/Scenes/Implemented scenes/Combat.unity
-    guid: 777cb81a7df10f848998e86e719c44e7
+  m_Scenes: []
   m_configObjects: {}
