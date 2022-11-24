@@ -1,11 +1,14 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class EnemiePlacer : MonoBehaviour
 {
     public Enemie enemy;
     public CreatePlayer player;
-    public Enemie[] enemyList;
+    public Encounters[] enemyList;
     public int min;
     public int max;
     public int totalWeigth;
@@ -14,6 +17,13 @@ public class EnemiePlacer : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player").GetComponent<CreatePlayer>();
         DontDestroyOnLoad(this.gameObject);
+    }
+    private void Update()
+    {
+        if (Input.GetKey("e"))
+        {
+            Win();
+        }
     }
     public void Encounter()
     {
@@ -32,8 +42,10 @@ public class EnemiePlacer : MonoBehaviour
         {
             if (_weight <= _enemy.grade)
             {
-                _enemy.level = Random.Range(min, max);
-                this.enemy = _enemy;
+                Debug.Log(_enemy.enemy);
+                Debug.Log(_enemy.enemy.level);
+                _enemy.enemy.level = Random.Range(min, max);
+                this.enemy = _enemy.enemy;
                 this.enemy.Stats();
                 return;
             }

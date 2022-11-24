@@ -2,46 +2,40 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public struct Encounters
+{
+    public Enemie enemy;
+    public int grade;
+}
+
+
 public class Area : MonoBehaviour
 {
-    #region Variables
     private EnemiePlacer placer;
-    [SerializeField] private Enemie[] enemyList;
-    [SerializeField] private int[] gradesList; // lijst  met gewichten van enemies
-    [SerializeField] private int min, max; // minimum level van enemy en maximum level van de enemy.
-    private int totalWeight; // totaal gewicht van alle enemies
-    private int i; // index
-    #endregion
-
-    #region StartUp
+    public Encounters[] encounters;
+    [SerializeField] private int levelMin,levelMax;
+    private int totalWeight;
     public void Start()
     {
         placer = GameObject.Find("placer").GetComponent<EnemiePlacer>();
         CalculateWeight();
         SetEnemieStats();
     }
-    #endregion
-
-    #region Functies
     public void CalculateWeight()
     {
-        foreach (var _enemy in enemyList)
+        foreach (var _encounter in encounters)
         {
-            _enemy.grade = gradesList[i];
-            i += 1;
-        }
-
-        foreach (var _enemy in enemyList)
-        {
-            totalWeight += _enemy.grade;
+            //_encounter.enemy.grade = _encounter.grade;
+            totalWeight += _encounter.grade;
         }
     }
     public void SetEnemieStats()
     {
         placer.totalWeigth = totalWeight;
-        placer.enemyList = enemyList;
-        placer.min = min;
-        placer.max = max;
+        placer.enemyList = encounters;
+        placer.min = levelMin;
+        placer.max = levelMax;
     }
-    #endregion
+
 }
