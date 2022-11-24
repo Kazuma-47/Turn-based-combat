@@ -8,7 +8,7 @@ public class EnemiePlacer : MonoBehaviour
 {
     public Enemie enemy;
     public CreatePlayer player;
-    public Enemie[] enemyList;
+    public Encounters[] enemyList;
     public int min;
     public int max;
     public int totalWeigth;
@@ -42,9 +42,10 @@ public class EnemiePlacer : MonoBehaviour
         {
             if (_weight <= _enemy.grade)
             {
-                Debug.Log(_enemy);
-                _enemy.level = Random.Range(min, max);
-                this.enemy = _enemy;
+                Debug.Log(_enemy.enemy);
+                Debug.Log(_enemy.enemy.level);
+                _enemy.enemy.level = Random.Range(min, max);
+                this.enemy = _enemy.enemy;
                 this.enemy.Stats();
                 return;
             }

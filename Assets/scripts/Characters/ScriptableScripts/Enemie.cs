@@ -7,7 +7,6 @@ public class Enemie : BaseCharacter
 {
     [SerializeField] private int baseExp;
     private int expGive;
-    public int grade;
     public void Level(int _min, int _max)
     {
         level = Random.Range(_min, _max);
