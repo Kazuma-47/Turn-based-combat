@@ -6,6 +6,7 @@ public class Interactable : MonoBehaviour
     #region Variables
     [SerializeField] 
     private bool automatic, inRange;
+    private bool called = false;
     [SerializeField] private KeyCode input = KeyCode.None;
     [SerializeField] private UnityEvent onUsed = new UnityEvent();  //will play to trigger a even when interacting with something
     [SerializeField] private UnityEvent onUnused = new UnityEvent(); // will play an event when you can no longer interact with something or reset it to its default state
@@ -26,7 +27,11 @@ public class Interactable : MonoBehaviour
     #region StartUp
     private void Update()
     {
-        if(automatic && inRange)onUsed.Invoke();        //if its automatic it will activate every frame 
+        if (automatic && inRange && called == false)
+        {
+            called = true;
+            onUsed.Invoke();
+        }       //if its automatic it will activate every frame 
         if (automatic == false)
         {
             if(inRange && Input.GetKeyUp(input))onUsed.Invoke();        //will wait for the player to interact

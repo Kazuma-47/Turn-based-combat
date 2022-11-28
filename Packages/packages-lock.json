@@ -1,5 +1,14 @@
 {
   "dependencies": {
+    "com.ibra.ibralogue": {
+      "version": "https://github.com/Ibralogue/Ibralogue.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.textmeshpro": "2.1.6"
+      },
+      "hash": "3826d6e6b86b18b331106a8caf058443640722e4"
+    },
     "com.unity.2d.animation": {
       "version": "5.0.4",
       "depth": 0,

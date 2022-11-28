@@ -28,7 +28,7 @@ public class CharacterLoader : MonoBehaviour
         switch (entity)
         {
             case Entity.enemy:
-                LoadSkin(_enemieInfo.sprite);
+    
                 HealthBar.SetActive(true);
                 SetHealthbar();
                     

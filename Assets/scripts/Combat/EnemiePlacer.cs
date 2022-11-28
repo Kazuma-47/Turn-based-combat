@@ -38,13 +38,12 @@ public class EnemiePlacer : MonoBehaviour
     public void EnemieChoser(int _totalWeigth)
     {
         int _weight = Random.Range(1, _totalWeigth);
-        foreach (var _enemy in enemyList)
+        foreach (Encounters _enemy in enemyList)
         {
+            Debug.Log("shit balls");
             if (_weight <= _enemy.grade)
             {
-                Debug.Log(_enemy.enemy);
                 _enemy.enemy.level = Random.Range(min, max);
-                Debug.Log(_enemy.enemy.level);
                 this.enemy = _enemy.enemy;
                 this.enemy.Stats();
                 return;

@@ -26,14 +26,12 @@ public class Area : MonoBehaviour
     {
         foreach (var _encounter in encounters)
         {
-            //_encounter.enemy.grade = _encounter.grade;
             totalWeight += _encounter.grade;
         }
     }
     public void SetEnemieStats()
     {
         placer.totalWeigth = totalWeight;
-        placer.enemyList = encounters;
         placer.min = levelMin;
         placer.max = levelMax;
     }
