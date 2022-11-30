@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 public class AttackInput : MonoBehaviour
 {
-    [SerializeField] protected UnityEvent<ParticleSystem,Transform> onAttack = new UnityEvent<ParticleSystem,Transform>();
+    [SerializeField] protected UnityEvent<GameObject,Transform> onAttack = new UnityEvent<GameObject,Transform>();
     
     public void atk1(int _move)
     {

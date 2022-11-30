@@ -7,5 +7,5 @@ public class Move : ScriptableObject
     public string name;
     public int damage;
     public int usageLeft;
-    public ParticleSystem VFX;
+    public GameObject VFX;
 }

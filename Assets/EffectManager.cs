@@ -11,9 +11,8 @@ public class EffectManager : MonoBehaviour
      
     
     
-    public void PlayEffect(ParticleSystem Effect, Transform Pos)
+    public void PlayEffect(GameObject Effect, Transform Pos)
     {
-        print("called");
         var currentEffect = Instantiate(Effect, Pos.position, quaternion.identity, gameObject.transform);
         var _moveEffectmain = currentEffect.GetComponent<ParticleSystem>().main;
         _moveEffectmain.stopAction = ParticleSystemStopAction.Callback;
