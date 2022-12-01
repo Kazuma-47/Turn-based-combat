@@ -18,13 +18,6 @@ public class EnemiePlacer : MonoBehaviour
         player = GameObject.FindWithTag("Player").GetComponent<CreatePlayer>();
         DontDestroyOnLoad(this.gameObject);
     }
-    private void Update()
-    {
-        if (Input.GetKey("e"))
-        {
-            Win();
-        }
-    }
     public void Encounter()
     {
         EnemieChoser(totalWeigth);

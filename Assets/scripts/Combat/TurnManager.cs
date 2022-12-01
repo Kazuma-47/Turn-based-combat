@@ -29,7 +29,6 @@ public class TurnManager : MonoBehaviour
         }
         else if (state == State.EnemyTurn)
         {
-            ui.ChangeUIMenu();
             onEnemyTurn.Invoke();
         }
     }

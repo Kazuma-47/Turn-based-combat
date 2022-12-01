@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.Events;
-using ADBannerView = UnityEngine.iOS.ADBannerView;
 
 public class Interactable : MonoBehaviour
 {   
@@ -22,6 +21,7 @@ public class Interactable : MonoBehaviour
     private void OnTriggerExit2D(Collider2D _other)
     {
         inRange = false;
+        called = false;
         onUnused.Invoke();
     }
     #endregion
@@ -29,17 +29,18 @@ public class Interactable : MonoBehaviour
     #region StartUp
     private void Update()
     {
-        if (automatic && inRange && called == false)
+        if (automatic && inRange && called == false) //if its automatic it will activate every frame 
         {
             called = true;
             onUsed.Invoke();
         }
-        //if its automatic it will activate every frame 
+        
     
         if (automatic == false)
         {
             if(inRange && Input.GetKeyUp(input))onUsed.Invoke();        //will wait for the player to interact
         }
     }
-    #endregion
 }
+    #endregion
+

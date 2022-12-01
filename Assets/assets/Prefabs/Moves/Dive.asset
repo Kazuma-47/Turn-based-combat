@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Dive
   m_EditorClassIdentifier: 
   name: Dive
-  damage: 8
-  usageLeft: 19
-  VFX: {fileID: 8353428789529527106, guid: 73a1f5ea3ea807f41ace18e31ae36bd0, type: 3}
+  damage: 7
+  usageLeft: 10
+  VFX: {fileID: 100000, guid: f2dba9e16cd347f44a395b8204544ee5, type: 3}
