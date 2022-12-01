@@ -19,11 +19,10 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 463e288965617e74f9ee2bf46d98d1e4, type: 3}
   moves:
   - {fileID: 11400000, guid: 8766c9d96cc557040985446e3638fe19, type: 2}
-  - {fileID: 11400000, guid: 1d6c3e9c8e352fe4e8a0aa3d3f473096, type: 2}
-  - {fileID: 11400000, guid: 1d6c3e9c8e352fe4e8a0aa3d3f473096, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
   maxHp: 14
   currentHp: 9
   currentAttackDamage: 0
   level: 2
   baseExp: 0
-  grade: 3

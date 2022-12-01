@@ -14,20 +14,35 @@ public class EnemyAI : AttackInput
             {
                 //move 1
                 attacking = false;
-                EnemyAttack(moves[0]);
+                if (moves[0] == null)
+                {
+                    attacking = true;
+                    Attack();
+                }
+                else EnemyAttack(moves[0]);
 
             }
             else if (Ai >= 3 && Ai <= 6)
             {
                 //move 2
                 attacking = false;
-                EnemyAttack(moves[1]);
+                if (moves[1] == null)
+                {
+                    attacking = true;
+                    Attack();
+                }
+                else EnemyAttack(moves[1]);
             }
             else if (Ai >= 6 && Ai <= 9)
             {
                 //move 3
                 attacking = false;
-                EnemyAttack(moves[2]);
+                if (moves[2] == null) 
+                {
+                    attacking = true;
+                    Attack();
+                 }
+                else EnemyAttack(moves[2]);
             }
         }
     }

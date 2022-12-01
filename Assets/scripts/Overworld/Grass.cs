@@ -7,7 +7,7 @@ public class Grass : MonoBehaviour
 {
     #region Variables
     private EnemiePlacer placer;
-    [SerializeField] private bool inGrass;
+     private bool inGrass;
     float steps;
     private Player player;
     [SerializeField] private int encounterSteps; // steps per encounter kans
@@ -28,7 +28,6 @@ public class Grass : MonoBehaviour
             if (player.horizontal != 0 || player.vertical != 0)
             {
                 steps += 5 * Time.deltaTime;
-                print(steps);
             }
             if (steps >= encounterSteps)
             {

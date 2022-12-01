@@ -51,8 +51,11 @@ public class UIManager : MonoBehaviour
    public void HoverPrompt(int _move)
    {
       var player = GetComponent<TurnManager>().player;
-      titlePrompt.text = player.moves[_move].name;
-      infoPrompt.text = player.moves[_move].GetInfo();
+      if (player.moves[_move] != null)
+      {
+         titlePrompt.text = player.moves[_move].name;
+         infoPrompt.text = player.moves[_move].GetInfo();
+      }
    }
 
    public void ResetHoverPrompt()
