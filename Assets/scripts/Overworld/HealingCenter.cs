@@ -18,5 +18,6 @@ public class HealingCenter : MonoBehaviour
       //add 20% of max hp to player
       float healingAmmount = player._player.maxHp/ 100f * 20;
       player._player.Heal((int)healingAmmount);
+      player._player.SetMoveUsage();
    }
 }

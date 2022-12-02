@@ -22,6 +22,18 @@ public class BaseCharacter : ScriptableObject
         currentHp = maxHp;
         currentAttackDamage = (int)Mathf.Floor(Mathf.Pow(factor, level) * ad);
     }
+
+    public void SetMoveUsage()
+    {
+        foreach (var _move in moves)
+        {
+            if (_move == null)
+            {
+                continue;
+            }
+            _move.usageLeft = _move.Usage;
+        }
+    }
     //heals an entity for a amount of healing. it will cap its current health if its higher than its max health
     public void Heal(int _amount)
     {

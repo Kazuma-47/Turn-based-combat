@@ -32,6 +32,7 @@ public class Players : BaseCharacter
         level = 5;
         expCap = (int)Mathf.Floor(Mathf.Pow(factor, level) * baseExp);
         Stats();
+        SetMoveUsage();
     }
     #endregion
 }
