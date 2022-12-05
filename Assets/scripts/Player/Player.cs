@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
 {
     #region Variables
     Rigidbody2D body;
+    CreatePlayer _createPlayer;
     [HideInInspector]
     public float horizontal, vertical; // de horizontaal en verticale axis
     public float runSpeed;
@@ -16,6 +17,9 @@ public class Player : MonoBehaviour
     #region StartUp
     private void Start()
     {
+        //set player pos after encounter
+        _createPlayer = GameObject.Find("CreatePlayer").GetComponent<CreatePlayer>();
+        gameObject.transform.position = _createPlayer.posBeforeCombat;
         body = GetComponent<Rigidbody2D>();
     }
 
@@ -28,6 +32,7 @@ public class Player : MonoBehaviour
     {
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
+        _createPlayer.UpdatePos(gameObject.transform);
     }
     #endregion
 }

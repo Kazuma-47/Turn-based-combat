@@ -10,7 +10,7 @@ public class HealingCenter : MonoBehaviour
 
    private void Start()
    {//find the singleton player object
-      player = GameObject.Find("Player").GetComponent<CreatePlayer>();
+      player = GameObject.Find("CreatePlayer").GetComponent<CreatePlayer>();
    }
 
    public void HealPlayer()

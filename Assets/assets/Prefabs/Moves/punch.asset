@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Punch
   damage: 5
-  usageLeft: 4
+  Usage: 12
+  usageLeft: 12
   VFX: {fileID: 100000, guid: f06e78284f831ae469c74624ab5d513b, type: 3}

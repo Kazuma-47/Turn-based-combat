@@ -8,6 +8,7 @@ public class EnemiePlacer : MonoBehaviour
 {
     public Enemie enemy;
     public CreatePlayer player;
+    public Player playerOverworldObj;
     public Encounters[] enemyList;
     public int min;
     public int max;

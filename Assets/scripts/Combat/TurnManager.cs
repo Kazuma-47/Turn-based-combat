@@ -40,18 +40,16 @@ public class TurnManager : MonoBehaviour
         if (state == State.PlayerTurn)
         {
             state = State.EnemyTurn;
-            CheckWin();
             onTurnEnd.Invoke();
         }
         else if (state == State.EnemyTurn)
         {
             state = State.PlayerTurn;
-            CheckWin();
             onTurnEnd.Invoke();
         }
     }
 
-    private void CheckWin()
+    public void CheckWin()
     {
        if(enemy.currentHp <= 0f)
        {
