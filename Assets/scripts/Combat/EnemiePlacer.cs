@@ -21,11 +21,13 @@ public class EnemiePlacer : MonoBehaviour
     public void Encounter()
     {
         EnemieChoser(totalWeigth);
+        player.SafePos();
         SceneManager.LoadScene("Combat");
     }
     public void Win()
     {
         player._player.ExpGet(enemy.EXPWin());
+        player.Spawn();
         SceneManager.LoadScene(1);
     }
     public void EnemieChoser(int _totalWeigth)

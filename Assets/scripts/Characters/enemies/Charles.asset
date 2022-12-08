@@ -25,4 +25,4 @@ MonoBehaviour:
   currentHp: 14
   currentAttackDamage: 0
   level: 9
-  baseExp: 0
+  baseExp: 50

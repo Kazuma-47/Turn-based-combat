@@ -7,7 +7,7 @@ public class Players : BaseCharacter
 {
     #region Variables
     [SerializeField] private int baseExp;
-    private int exp, expCap;
+    [SerializeField] private int exp, expCap;
     #endregion
 
     #region Functions
@@ -18,18 +18,26 @@ public class Players : BaseCharacter
         {
             LevelUp();
         }
+        Debug.Log(exp);
+        Debug.Log(level);
     }
 
     public void LevelUp()
     {
         exp = exp - expCap; 
-        level = level + 1;
+        level += 1;
         expCap = (int)Mathf.Floor(Mathf.Pow(factor, level) * baseExp);
         Stats();
+        if (exp >= expCap)
+        {
+            LevelUp();
+        }
+
     }
     public void StartUp() 
     {
         level = 5;
+        exp = 0;
         expCap = (int)Mathf.Floor(Mathf.Pow(factor, level) * baseExp);
         Stats();
     }

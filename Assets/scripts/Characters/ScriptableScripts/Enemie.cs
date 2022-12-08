@@ -12,6 +12,6 @@ public class Enemie : BaseCharacter
     public int EXPWin()
     {
         return expGive = (int)Mathf.Floor(Mathf.Pow(factor, level) * baseExp);
-    }
+    } 
 
 }

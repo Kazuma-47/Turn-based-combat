@@ -56,6 +56,7 @@ public class TurnManager : MonoBehaviour
        if(enemy.currentHp <= 0f)
        {
            SceneManager.LoadScene("win");
+            player.ExpGet(enemy.EXPWin());
        }
 
        if (player.currentHp <= 0f)

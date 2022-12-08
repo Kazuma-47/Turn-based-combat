@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 07ec23fbae4e55a4cab6de0934b02d9a, type: 3}
-  m_Name: Tackle
+  m_Name: punch
   m_EditorClassIdentifier: 
   name: Tackle
   damage: 5
-  usageLeft: 17
+  usageLeft: 14
   VFX: {fileID: 100000, guid: f06e78284f831ae469c74624ab5d513b, type: 3}
