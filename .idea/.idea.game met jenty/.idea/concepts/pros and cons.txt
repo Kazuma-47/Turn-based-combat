@@ -1,0 +1,36 @@
+metroidvania
+pros 
+
+grotere open world 
+meer bosses 
+meer gameplay
+verhaal kan je beter vertellen 
+controlle over waar en wanneer de player ergens gaat
+optional rooms to reward exploration
+naration via de wereld vertellen
+npc zijn meer verspreid over de wereld
+meer ruimte voor random npc voor world building en lore
+heeft meer ruimte voor worldbuilding.
+
+cons
+replayability
+
+
+
+
+rogue-like
+
+pros 
+character building is makkelijker voor bosses
+meer relaties tussen characters
+replayability 
+kan de route zelf bepalen voor welke boss je doet. (sommige bosses zijn wel verplicht)
+npc zitten samen bij het begin
+npc moeten meer een doel hebben.
+heeft meer tempo in de game play
+makkelijker om op te pakken en te spelen. (bv om tijd te doden of even snel een ronde)
+kan replayability gebruiken voor world building
+
+cons
+
+alienate casual player door difficulty 
