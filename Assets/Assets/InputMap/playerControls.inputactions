@@ -1,8 +1,8 @@
 {
-    "name": "Input Map",
+    "name": "playerControls",
     "maps": [
         {
-            "name": "Player",
+            "name": "PC",
             "id": "79f48de0-ea93-4e40-b337-6ec9104a9a5a",
             "actions": [
                 {
@@ -69,17 +69,6 @@
                 },
                 {
                     "name": "",
-                    "id": "4eb95f02-1826-4c07-b5e4-a72c85fa8469",
-                    "path": "<Gamepad>/leftStick/left",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "62e10df7-bafd-42cb-b656-f6a35d1a0419",
                     "path": "<Keyboard>/w",
                     "interactions": "",
@@ -103,6 +92,52 @@
                 {
                     "name": "",
                     "id": "c2705ae5-d800-4667-bbda-52b7fd3c1053",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Controller",
+            "id": "fd9a2bd8-0fb9-45fb-a431-f9c3dfab5555",
+            "actions": [
+                {
+                    "name": "Move",
+                    "type": "Value",
+                    "id": "953600ab-a0f7-45d2-b81c-c407e249bb60",
+                    "expectedControlType": "Stick",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Jump",
+                    "type": "Button",
+                    "id": "d85d0a2d-1809-4f7c-8e12-87dc7e3ca29c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "b4f9b940-2523-4f8c-a2e2-59be0b9da05e",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e8e281a2-5f51-4e29-a6d6-7d7352026bb5",
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",

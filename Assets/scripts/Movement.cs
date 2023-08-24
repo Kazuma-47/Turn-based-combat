@@ -1,11 +1,11 @@
 using UnityEngine;
+
 public class Movement : MonoBehaviour
 {
-	[Header("Input Map")]
-	public Rigidbody2D RB;
-	private Vector2 _moveInput;
-	
-	public bool hasJumped;
+	[Header("Movement Debug")]
+	private Rigidbody2D RB;
+	public bool Decelaration;
+	public bool canJumped;
 	public MovementSettings MovementData;
 
 	private void Awake()
@@ -15,24 +15,25 @@ public class Movement : MonoBehaviour
    
 
 	
-    private void Run(float lerpAmount)
+    public void Run(float lerpAmount , Vector2 input)
 	{
-		float targetSpeed = _moveInput.x * MovementData.maxRunSpeed;
-		targetSpeed = Mathf.Lerp(RB.velocity.x, targetSpeed, lerpAmount);
-		float accelRate;
+		//gives a slipery effect when you run and try to turn or stop
+			float targetSpeed = input.x * MovementData.maxRunSpeed;
+			targetSpeed = Mathf.Lerp(RB.velocity.x, targetSpeed, lerpAmount);
+			float accelRate;
 
-		accelRate = (Mathf.Abs(targetSpeed) > 0.01f) ? MovementData.runAccelAmount : MovementData.runDeccelAmount;
+			accelRate = (Mathf.Abs(targetSpeed) > 0.01f) ? MovementData.runAccelAmount : MovementData.runDeccelAmount;
 
-		float speedDif = targetSpeed - RB.velocity.x;
+			float speedDif = targetSpeed - RB.velocity.x;
 
-		float movement = accelRate * speedDif;
-		RB.AddForce(movement * Vector2.right, ForceMode2D.Force);
+			float movement = accelRate * speedDif;
+			RB.AddForce(movement * Vector2.right, ForceMode2D.Force);
 	}
-	private void Jump()
+	public void Jump()
     {
-		if (!hasJumped)
+		if (canJumped)
 		{
-			hasJumped = false;
+			canJumped = false;
 			float jumpStrength = MovementData.jumpStrength;
 			if (RB.velocity.y < 0f)
 			{
@@ -41,4 +42,21 @@ public class Movement : MonoBehaviour
 			RB.AddForce(Vector2.up * jumpStrength, ForceMode2D.Impulse);
 		}
 	}
+
+	public void ReleasedKey()
+    {
+		if (Decelaration == false)
+		{
+			float currentVelocity = RB.velocity.x;
+			float targetVelocity = 0f;
+			float t = Mathf.Clamp01(Time.deltaTime / 0.25f);
+
+			float newVelocity = Mathf.Lerp(currentVelocity, targetVelocity, t);
+			RB.velocity = new Vector2(newVelocity, RB.velocity.y);
+		}
+    }
+    public void GroundCheck(bool value)
+    {
+		canJumped = value;
+    }
 }

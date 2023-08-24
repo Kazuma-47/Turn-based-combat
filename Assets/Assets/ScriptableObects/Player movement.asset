@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1627fff153fcc24b9d5404918899e92, type: 3}
   m_Name: Player movement
   m_EditorClassIdentifier: 
+  jumpStrength: 7
   maxRunSpeed: 16
-  runAcceleration: 0.7
-  runDecceleration: 0.8
-  runAccelAmount: 2.1875
-  runDeccelAmount: 2.5
+  runAcceleration: 0.8
+  runDecceleration: 0.01
+  runAccelAmount: 2.5
+  runDeccelAmount: 0.03125

@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Movement Config")]
 public class MovementSettings : ScriptableObject
 {
+	[Header("Movement Config")]
 	public float jumpStrength;
     public float maxRunSpeed;
 	public float runAcceleration;
