@@ -42,7 +42,15 @@ public class Movement : MonoBehaviour
 			RB.AddForce(Vector2.up * jumpStrength, ForceMode2D.Impulse);
 		}
 	}
-
+	public void Crouch()
+    {
+		print("crouching");
+    }
+	public void Dash(Vector2 Input)
+    {
+		//give dash a cooldown
+		print("dashing");
+    }
 	public void ReleasedKey()
     {
 		if (Decelaration == false)

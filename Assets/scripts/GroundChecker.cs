@@ -3,11 +3,13 @@ using UnityEngine;
 public class GroundChecker : MonoBehaviour
 {
     private Movement movement;
-    public Collider2D playerCollider;
+    private Collider2D playerCollider;
     private LayerMask groundLayer;
+    [Header("Debug")]
     [SerializeField] private bool DebugGizmo;
     private void Awake()
     {
+        playerCollider = GetComponent<Collider2D>();
         groundLayer = LayerMask.GetMask("Ground");
         movement = GetComponent<Movement>();
         playerCollider = GetComponent<Collider2D>();

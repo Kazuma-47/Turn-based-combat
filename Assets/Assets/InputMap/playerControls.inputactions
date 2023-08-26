@@ -20,6 +20,22 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Crouch",
+                    "type": "Button",
+                    "id": "a386ec27-f107-4fcf-a6f6-b7b3591f2042",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Hold"
+                },
+                {
+                    "name": "Dash",
+                    "type": "Button",
+                    "id": "8be6e3ef-54f2-4aef-9c67-f6fa5447a77b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Hold"
                 }
             ],
             "bindings": [
@@ -33,17 +49,6 @@
                     "action": "Move",
                     "isComposite": true,
                     "isPartOfComposite": false
-                },
-                {
-                    "name": "down",
-                    "id": "2ae28133-2a2c-41e3-8273-58575af31e75",
-                    "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
                 },
                 {
                     "name": "left",
@@ -91,12 +96,23 @@
                 },
                 {
                     "name": "",
-                    "id": "c2705ae5-d800-4667-bbda-52b7fd3c1053",
-                    "path": "<Gamepad>/buttonSouth",
+                    "id": "5f9620ad-80d8-4225-93b9-77966b9ad909",
+                    "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Jump",
+                    "action": "Crouch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "20f3f786-ef59-4c3e-89fa-142e23040984",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dash",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -118,6 +134,14 @@
                     "name": "Jump",
                     "type": "Button",
                     "id": "d85d0a2d-1809-4f7c-8e12-87dc7e3ca29c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Crouch",
+                    "type": "Button",
+                    "id": "9dcd354c-5d63-48c0-9a5b-7ead69fb9267",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -143,6 +167,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "33dbd318-7903-4f8b-979f-5b9d39fd41c9",
+                    "path": "<Gamepad>/leftStick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Crouch",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

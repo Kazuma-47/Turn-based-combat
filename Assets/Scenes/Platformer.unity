@@ -189,7 +189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Decelaration: 0
-  canJumped: 0
+  canJumped: 1
   MovementData: {fileID: 11400000, guid: a4be89e3609d3fb498974e4d2641110e, type: 2}
 --- !u!61 &1011353617
 BoxCollider2D:
@@ -204,7 +204,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.0029181838}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -215,7 +215,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.62, y: 1.36}
+  m_Size: {x: 0.62, y: 1.3541638}
   m_EdgeRadius: 0
 --- !u!50 &1011353618
 Rigidbody2D:
@@ -277,7 +277,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: d0ac6b8c8beb3704486f66dc4f6230aa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -334,7 +334,7 @@ MonoBehaviour:
     m_ActionName: Player/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
+  m_DefaultActionMap: PC
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &1011353622
@@ -349,7 +349,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e862f43cce7f4694cbb0c9bf656260de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InputActions: {fileID: -944628639613478452, guid: cfa60bed44cf6764793219656e71128f, type: 3}
 --- !u!114 &1011353623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -362,7 +361,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebfb7e73390aff0428f87ff91926b3a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCollider: {fileID: 1011353617}
   DebugGizmo: 0
 --- !u!1 &1185502747
 GameObject:
@@ -560,7 +558,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1201316179}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.4751, y: 1.45, z: 0}
+  m_LocalPosition: {x: -3.8, y: 1.21, z: 0}
   m_LocalScale: {x: 14.8897, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -906,7 +904,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 53a679ff829e09d4da6d1ff5008249a3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -926,7 +924,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2085458586}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.97, y: -3.7, z: 0}
+  m_LocalPosition: {x: 9.5, y: -5.62, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
